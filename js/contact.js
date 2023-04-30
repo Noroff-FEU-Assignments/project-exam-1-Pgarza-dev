@@ -34,9 +34,9 @@ function validateForm(event) {
     emailError.style.display = 'block';
   }
   if (
-    checkLength(fullName.value, 0) &&
-    checkLength(subject.value, 9) &&
-    checkLength(textarea.value, 24) &&
+    checkLength(fullName.value, 6) &&
+    checkLength(subject.value, 16) &&
+    checkLength(textarea.value, 26) &&
     validatEmail(email.value) === true
   ) {
     success.style.display = 'block';
@@ -44,6 +44,7 @@ function validateForm(event) {
     success.style.display = 'none';
   }
 }
+// console.log(validateForm);
 
 if (
   checkLength(fullName.value, 0) === true &&
@@ -52,13 +53,13 @@ if (
   validatEmail(email.value) === true
 ) {
   submitMessage.style.display = 'block';
-  document.messageForm.submit();
+  // document.messageForm.submit();
 } else {
   submitMessage.style.display = 'none';
 }
 
 form.addEventListener('input', validateForm);
-form.addEventListener('textarea', validateForm);
+// form.addEventListener('textarea', validateForm);
 form.addEventListener('submit', validateForm);
 
 // check the length of the value

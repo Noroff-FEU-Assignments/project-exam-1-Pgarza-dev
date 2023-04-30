@@ -99,10 +99,6 @@ nav {
   display: inline;
 }
 
-/* header {
-  width: 100%;
-} */
-
 .navbar {
   min-height: 50px;
   display: flex;
@@ -392,9 +388,23 @@ nav {
   display: flex;
   gap: 2em;
 }
-
+.fa-brands,
+.fa-twitter,
+.fa-instagram {
+  color: #d1d1d1;
+  margin: 10px;
+}
+.fa-instagram:hover {
+  color: #a45d74;
+}
+.fa-facebook:hover {
+  color: blue;
+}
+.fa-twitter:hover {
+  color: rgb(0, 132, 255);
+}
 /* FOOTER NAV */
-.footer-nav {
+/* .footer-nav {
   display: flex;
   flex-direction: row;
   background: var(--navbar-bg-color);
@@ -406,7 +416,7 @@ nav {
   align-items: center;
   flex-wrap: nowrap;
   color: white;
-}
+} */
 
 /* CONTACT FORM */
 .contact-container {
