@@ -822,7 +822,7 @@ nav {
     top: 30px;
   }
   .about-me {
-    padding: 100px 400px;
+    /* padding: 100px 400px; */
     font-size: 1.5rem;
     max-width: 1920px;
     text-align: justify;
