@@ -43,9 +43,10 @@ body {
   justify-content: center;
   margin-top: 50p;
   padding: 164px;
-  color: white;
+  color: black;
   animation: slogan 3s ease-out 1 both;
   font-size: 5rem;
+  /* mix-blend-mode: lighten; */
 }
 
 @keyframes slogan {
@@ -510,7 +511,8 @@ nav {
 
 /* ABOUT ME PAGE */
 /* ABOUT ME SECTION */
-.myself-section {
+.myself-section,
+.about-me-deep-dive-section {
   display: flex;
   flex-flow: column wrap;
   max-width: 500px;
@@ -529,12 +531,37 @@ nav {
 }
 .myself-container {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   gap: 3rem;
   margin: 0px auto 400px auto;
   padding: 0 50px 0 50px;
   max-width: 1024px;
 }
+.myself-container-deep-dive {
+  display: flex;
+  flex-wrap: wrap;
+
+  flex-direction: row-reverse;
+  gap: 3rem;
+  margin: 0px auto 400px auto;
+  padding: 0 50px 0 50px;
+  max-width: 1024px;
+}
+.deep-dive-img {
+  width: 300px;
+  height: 100%;
+  border-radius: 10px;
+}
+/* .about-me-deep-dive-section {
+  display: flex;
+  flex-flow: column wrap;
+  max-width: 500px;
+  font-size: 1rem;
+  flex-direction: column;
+  gap: 1rem;
+  line-height: 1.5rem;
+} */
 .subject-title {
   color: var(--about-me-title);
 }
@@ -620,6 +647,14 @@ nav {
   }
   .call-to-action {
     padding: 100px 80px;
+  }
+  .justify-768px {
+    justify-content: center;
+  }
+}
+@media (max-width: 948px) {
+  .justify-768px {
+    justify-content: center;
   }
 }
 @media (max-width: 1024px) {
