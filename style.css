@@ -12,6 +12,9 @@
   --contact-form-border-clicked: blue;
   --contact-form-border: black;
   --about-me-title: rgba(0, 0, 255, 0.525);
+  --about-me-bg-color: rgba(209, 209, 209, 0.164);
+  --copy-right-bg-color: rgba(248, 248, 248);
+  --welcome-title: linear-gradient(#00ccff, #d400d4);
 }
 html {
   scroll-behavior: smooth;
@@ -41,14 +44,64 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 50p;
+  margin-top: 50px;
   padding: 164px;
   color: black;
   animation: slogan 3s ease-out 1 both;
   font-size: 5rem;
+  z-index: 2;
   /* mix-blend-mode: lighten; */
+  /* border: 2px solid black; */
 }
 
+/* .welcome-title::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--welcome-title);
+  animation: animate s ease-in-out infinite;
+  animation: fade 4s ease-in-out infinite;
+  z-index: -1;
+}
+.welcome-title::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  background: white;
+  /* border-radius: 16px; */
+  z-index: -1;
+}
+/* FOR BORDER ANIMATION ON TITLE */
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  /* 50% {
+    transform: rotate(360deg);
+  } */
+  100% {
+    transform: rotate(360deg);
+    background: linear-gradient(#00ccff4a, #d400d429);
+  }
+}
+@keyframes fade {
+  0% {
+    transform: rotate(0deg);
+    background: linear-gradient(#00ccff4a, #d400d429);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  75% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+} */
+
+/* FOR TITLE TEXT */
 @keyframes slogan {
   0% {
     color: rgba(255, 255, 255, 0);
@@ -85,6 +138,35 @@ body {
     color: black;
   }
 }
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+    background: linear-gradient(#00ccff4a, #d400d429);
+  }
+}
+@keyframes fade {
+  0% {
+    transform: rotate(0deg);
+    background: linear-gradient(#00ccff4a, #d400d429);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  /* 75% {
+    transform: rotate(0deg);
+  } */
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
 .blog-containers {
   display: flex;
   flex-direction: row;
@@ -261,12 +343,12 @@ nav {
   width: auto;
   margin-top: -22px;
   padding: 16px;
-  color: black;
+  color: white;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 26px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
-  user-select: none;
+  /* user-select: none; */
 }
 
 /* Position the "next button" to the right */
@@ -417,6 +499,24 @@ nav {
   color: rgb(0, 132, 255);
 }
 /* FOOTER NAV */
+.copy-rights {
+  display: flex;
+  flex-direction: row;
+  background: var(--copy-right-bg-color);
+  position: fixed;
+  bottom: 0;
+  height: 29px;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: nowrap;
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  z-index: 100;
+}
 /* .footer-nav {
   display: flex;
   flex-direction: row;
@@ -545,7 +645,7 @@ nav {
   flex-wrap: wrap;
   flex-direction: row;
   gap: 3rem;
-  margin: 0px auto 400px auto;
+  margin: 50px auto 250px auto;
   padding: 0 50px 0 50px;
   max-width: 1024px;
 }
