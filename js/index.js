@@ -53,33 +53,33 @@ showSlides(slideIndex);
 let slideIndexTwo = 1;
 
 // Next/previous controls
-function plusSlidesTwo(changSlideTwo) {
-  showSlidesTwo((slideIndexTwo += changSlideTwo));
+function plusSlidesTwo(changeSlideTwo) {
+  showSlidesTwo((slideIndexTwo += changeSlideTwo));
 }
 
 // Thumbnail image controls
-function currentSlideTwo(movSlideTwo) {
-  showSlidesTwo((slideIndexTwo = movSlideTwo));
+function currentSlideTwo(moveSlideTwo) {
+  showSlidesTwo((slideIndexTwo = moveSlideTwo));
 }
 
 function showSlidesTwo(carouselTwo) {
   let i;
-  let slides = document.getElementsByClassName('mySlides-two');
-  let dots = document.getElementsByClassName('dot');
-  if (carouselTwo > slides.length) {
+  let slidesTwo = document.getElementsByClassName('mySlides-two');
+  let dotsTwo = document.getElementsByClassName('dotsTwo');
+  if (carouselTwo > slidesTwo.length) {
     slideIndexTwo = 1;
   }
   if (carouselTwo < 1) {
-    slideIndexTwo = slides.length;
+    slideIndexTwo = slidesTwo.length;
   }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = 'none';
+  for (i = 0; i < slidesTwo.length; i++) {
+    slidesTwo[i].style.display = 'none';
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(' active', '');
+  for (i = 0; i < dotsTwo.length; i++) {
+    dotsTwo[i].className = dotsTwo[i].className.replace(' active', '');
   }
-  slides[slideIndexTwo - 1].style.display = 'block';
-  dots[slideIndexTwo - 1].className += ' active';
+  slidesTwo[slideIndexTwo - 1].style.display = 'block';
+  dotsTwo[slideIndexTwo - 1].className += ' active';
 }
 showSlidesTwo(slideIndexTwo);
 
@@ -88,67 +88,67 @@ let slideIndexThree = 1;
 
 // Next/previous controls
 function plusSlidesThree(changeSlideThree) {
-  showSlidesthree((slideIndexThree += changeSlideThree));
+  showSlidesThree((slideIndexThree += changeSlideThree));
 }
 
 // Thumbnail image controls
 function currentSlideTwo(moveSlideThree) {
-  showSlidesthree((slideIndexThree = moveSlideThree));
+  showSlidesThree((slideIndexThree = moveSlideThree));
 }
 
-function showSlidesthree(carouselThree) {
+function showSlidesThree(carouselThree) {
   let i;
-  let slides = document.getElementsByClassName('mySlides-three');
-  let dots = document.getElementsByClassName('dot');
+  let slidesThree = document.getElementsByClassName('mySlides-three');
+  let dotsThree = document.getElementsByClassName('dotsThree');
 
-  if (carouselThree > slides.length) {
+  if (carouselThree > slidesThree.length) {
     slideIndexThree = 1;
   }
   if (carouselThree < 1) {
-    slideIndexThree = slides.length;
+    slideIndexThree = slidesThree.length;
   }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = 'none';
+  for (i = 0; i < slidesThree.length; i++) {
+    slidesThree[i].style.display = 'none';
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(' active', '');
+  for (i = 0; i < dotsThree.length; i++) {
+    dotsThree[i].className = dotsThree[i].className.replace(' active', '');
   }
-  slides[slideIndexThree - 1].style.display = 'block';
-  dots[slideIndexThree - 1].className += ' active';
+  slidesThree[slideIndexThree - 1].style.display = 'block';
+  dotsThree[slideIndexThree - 1].className += ' active';
 }
-showSlidesthree(slideIndexThree);
+showSlidesThree(slideIndexThree);
 
 // Caraousel 4
 let slideIndexFour = 1;
 
 // Next/previous controls
-function plusSlidesFour(changSlideFour) {
-  showSlidesFour((slideIndexFour += changSlideFour));
+function plusSlidesFour(changeSlideFour) {
+  showSlidesFour((slideIndexFour += changeSlideFour));
 }
 
 // Thumbnail image controls
-function currentSlideFour(movSlideFour) {
-  showSlidesFour((slideIndexFour = movSlideFour));
+function currentSlideFour(moveSlideFour) {
+  showSlidesFour((slideIndexFour = moveSlideFour));
 }
 
 function showSlidesFour(carouselFour) {
   let i;
-  let slides = document.getElementsByClassName('mySlides-four');
-  let dots = document.getElementsByClassName('dot');
-  if (carouselFour > slides.length) {
+  let slidesFour = document.getElementsByClassName('mySlides-four');
+  let dotsFour = document.getElementsByClassName('dotsFour');
+  if (carouselFour > slidesFour.length) {
     slideIndexFour = 1;
   }
   if (carouselFour < 1) {
-    slideIndexFour = slides.length;
+    slideIndexFour = slidesFour.length;
   }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = 'none';
+  for (i = 0; i < slidesFour.length; i++) {
+    slidesFour[i].style.display = 'none';
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(' active', '');
+  for (i = 0; i < dotsFour.length; i++) {
+    dotsFour[i].className = dotsFour[i].className.replace(' active', '');
   }
-  slides[slideIndexFour - 1].style.display = 'block';
-  dots[slideIndexFour - 1].className += ' active';
+  slidesFour[slideIndexFour - 1].style.display = 'block';
+  dotsFour[slideIndexFour - 1].className += ' active';
 }
 
 showSlidesFour(slideIndexFour);
