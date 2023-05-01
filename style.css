@@ -245,6 +245,13 @@ nav {
 .img-border {
   border-radius: 10px;
 }
+.img-zoom:hover,
+.img-zoom:active {
+  transition: transform 0.5s ease;
+  transform: scale(1.1);
+  z-index: 3;
+}
+
 /* Next & previous buttons */
 .prev,
 .next {
@@ -311,6 +318,7 @@ nav {
   padding: 8px 12px;
   position: absolute;
   top: 0;
+  z-index: 2;
 }
 
 /* The dots/bullets/indicators */
