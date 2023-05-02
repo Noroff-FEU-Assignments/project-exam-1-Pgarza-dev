@@ -728,26 +728,36 @@ nav {
 }
 
 /*-------------- FIGHT POST PAGE ---------------*/
+.blog-post-page-layout {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 365px;
+}
 .fight-post-container {
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  /* margin: 50px auto 250px auto; */
-  padding: 0 50px 0 50px;
+  margin: 50px auto 0px auto;
+  /* padding: 0 50px 0 50px; */
   max-width: 1444px;
 }
 .full-body-img {
-  width: 100%;
+  width: 400px;
   height: 100%;
-  border-radius: 10px;
+  padding: 20px;
+  /* border-radius: 10px; */
   margin-bottom: 30px;
+  /* position: relative; */
+  position: fixed;
+  left: 10px;
 }
 .blog-post-container {
   display: flex;
   flex-direction: row;
   gap: 4rem;
   max-width: 1249px;
-  margin: 50px auto 0 auto;
+  margin: 80px auto 0 auto;
   flex-wrap: wrap;
 }
 .fight-card-posts {
