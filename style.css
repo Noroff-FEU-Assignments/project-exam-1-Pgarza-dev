@@ -469,7 +469,7 @@ nav {
 .signature-quote {
   font-family: 'Comforter Brush', cursive;
   font-size: 2rem;
-  color: black;
+  color: red;
   margin: 10px;
   text-align: center;
   padding: 5px;
@@ -708,12 +708,18 @@ nav {
 .subject-description {
   font-size: 1.3rem;
 }
-.myself-section p::before {
+.myself-section p::before,
+.about-me-deep-dive-section p::before,
+.about-me-ufc-section p::before,
+.about-me-team-gsp p::before {
   content: open-quote;
   font-size: 2.5em;
   color: red;
 }
-.myself-section p::after {
+.myself-section p::after,
+.about-me-deep-dive-section p::after,
+.about-me-ufc-section p::after,
+.about-me-team-gsp p::after {
   content: close-quote;
   font-size: 1.5rem;
   color: red;
