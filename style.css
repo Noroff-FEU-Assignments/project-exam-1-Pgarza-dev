@@ -274,14 +274,12 @@ nav {
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;
   }
-
   .hamburger.active .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
   .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
-
   .nav-menu {
     position: fixed;
     left: -100%;
@@ -293,24 +291,20 @@ nav {
     text-align: center;
     transition: 0.3s;
   }
-
   .nav-item {
     margin: 16px 0;
   }
-
   .nav-menu.active {
     left: 0;
   }
 }
 
-/* Slideshow container */
+/*-------------- Slideshow container --------------*/
 .slideshow-container {
   max-width: 425px;
   position: relative;
   margin: auto;
 }
-
-/* first slide */
 
 /* Hide the images by default */
 .mySlides,
@@ -329,6 +323,7 @@ nav {
   transition: transform 0.5s ease;
   transform: scale(1.1);
   z-index: 3;
+  box-shadow: 0px 4px 8px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* Next & previous buttons */
@@ -371,13 +366,13 @@ nav {
   width: 100%;
   text-align: center;
   background: rgba(0, 0, 0, 0.8);
-
   bottom: 0;
   transition: 0.5s;
 }
 .fight-location-text {
-  font-size: 2rem;
+  font-size: 1rem;
   color: white;
+  /* text-decoration: underline; */
 }
 
 .class-name {
@@ -400,6 +395,25 @@ nav {
   z-index: 1;
 }
 
+/* READ MORE */
+.read-more {
+  color: var(--skill-level-title);
+  /* font-size: 1.5rem; */
+  padding: 12px;
+  text-align: center;
+  text-decoration: underline;
+  display: inline-block;
+  border-radius: 10px;
+  background: rgb(0 0 0/ 0.8);
+  margin: 0px 0px 0px 0px;
+  transition: 0.5s;
+}
+.read-more:hover {
+  background: rgba(255, 255, 255);
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
 /* The dots/bullets/indicators */
 .dot,
 .dotsTwo,
@@ -417,7 +431,7 @@ nav {
 
 .active,
 .dot:hover {
-  background-color: #717171;
+  background-color: #1b1b1b;
 }
 
 /* Fading animation */
@@ -536,7 +550,7 @@ nav {
   justify-content: center;
   align-items: center;
 }
-.call-to-action-paragraph {
+.call-to-action-paragraph-contact-page {
   border-bottom: 2px solid #000000;
   border-top: 2px solid #000;
   padding: 5px 0px 5px 0px;
