@@ -620,7 +620,9 @@ nav {
 /* ABOUT ME PAGE */
 /* ABOUT ME SECTION */
 .myself-section,
-.about-me-deep-dive-section {
+.about-me-deep-dive-section,
+.about-me-ufc-section,
+.about-me-team-gsp {
   display: flex;
   flex-flow: column wrap;
   max-width: 500px;
@@ -635,7 +637,7 @@ nav {
 .about-me-img {
   width: 300px;
   height: 100%;
-  border-radius: 50%;
+  border-radius: 10px;
 }
 .myself-container {
   display: flex;
@@ -650,7 +652,7 @@ nav {
   display: flex;
   flex-wrap: wrap;
 
-  flex-direction: row-reverse;
+  flex-direction: row;
   gap: 3rem;
   margin: 0px auto 400px auto;
   padding: 0 50px 0 50px;
@@ -658,9 +660,10 @@ nav {
 }
 .deep-dive-img {
   width: 300px;
-  height: 100%;
+  height: 450px;
   border-radius: 10px;
 }
+
 /* .about-me-deep-dive-section {
   display: flex;
   flex-flow: column wrap;
