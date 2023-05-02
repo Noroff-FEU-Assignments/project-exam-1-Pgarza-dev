@@ -635,6 +635,21 @@ nav {
 
 /* ABOUT ME PAGE */
 /* ABOUT ME SECTION */
+.deep-dive-bg-color {
+  background-color: rgba(133, 133, 133, 0.164);
+  height: 400px;
+  padding: 20px;
+  margin: 0px auto 400px auto;
+  max-width: 1024px;
+}
+.about-me-ufc-bg-color {
+  background-color: rgba(133, 133, 133, 0.164);
+  height: 700px;
+  padding: 20px;
+  margin: 0px auto 400px auto;
+  max-width: 1024px;
+}
+
 .myself-section,
 .about-me-deep-dive-section,
 .about-me-ufc-section,
@@ -667,10 +682,8 @@ nav {
 .myself-container-deep-dive {
   display: flex;
   flex-wrap: wrap;
-
   flex-direction: row;
   gap: 3rem;
-  margin: 0px auto 400px auto;
   padding: 0 50px 0 50px;
   max-width: 1024px;
 }
