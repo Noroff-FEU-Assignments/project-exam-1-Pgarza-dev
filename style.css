@@ -392,7 +392,7 @@ nav {
   padding: 8px 12px;
   position: absolute;
   top: 0;
-  z-index: 1;
+  z-index: 0;
 }
 
 /* READ MORE */
@@ -780,6 +780,8 @@ nav {
   font-weight: bold;
   text-decoration: underline;
 }
+
+/* MEDIA QUERIES */
 @media (max-width: 425px) {
   .navbar {
     justify-content: flex-end;
@@ -792,7 +794,7 @@ nav {
     display: none;
   }
   body {
-    background-color: #000000;
+    background-color: #ffffff;
   }
   .about-me {
     /* margin: 20px 60px; */
@@ -819,7 +821,6 @@ nav {
   }
 }
 
-/* MEDIA QUERIES */
 @media (max-width: 768px) {
   #nav-menu-bg-color {
     background-color: rgb(51 51 51);

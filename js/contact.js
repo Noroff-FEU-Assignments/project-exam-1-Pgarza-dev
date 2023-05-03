@@ -11,6 +11,23 @@ const success = document.querySelector('#success');
 const submitButton = document.querySelector('#submit-form');
 const submitMessage = document.querySelector('.form-submitted');
 
+// Hamburguer Menu
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
+});
+
+document.querySelectorAll('.nav-link').forEach((n) =>
+  n.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+  })
+);
+console.log(hamburger);
+
 function validateForm(event) {
   event.preventDefault();
   if (checkLength(fullName.value, 6) === true) {
