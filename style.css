@@ -803,6 +803,7 @@ nav {
     justify-content: flex-start;
     background-color: #000000;
     height: 57px;
+    padding: 0px 8px;
   }
   /* .hidden-for-mobile {
     display: none;
