@@ -733,12 +733,13 @@ nav {
   flex-direction: row;
   flex-wrap: wrap;
   margin-left: 365px;
+  margin-top: 50px;
 }
 .fight-post-container {
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  margin: 50px auto 0px auto;
+  /* margin: 50px auto 0px auto; */
   /* padding: 0 50px 0 50px; */
   max-width: 1444px;
 }
@@ -757,7 +758,7 @@ nav {
   flex-direction: row;
   gap: 4rem;
   max-width: 1249px;
-  margin: 80px auto 0 auto;
+  margin: 20px auto 0 auto;
   flex-wrap: wrap;
 }
 .fight-card-posts {
@@ -851,10 +852,29 @@ nav {
   .justify-768px {
     justify-content: center;
   }
+  .full-body-img {
+    width: 300px;
+    padding: 20px 10;
+    left: 0px;
+  }
+  .blog-post-page-layout {
+    margin-left: 300px;
+  }
+  .fight-card-posts {
+    padding: 0px;
+    max-width: 210px;
+  }
+  /* .blog-imgs {
+    width: 200px;
+    height: 150px;
+  } */
 }
-@media (max-width: 948px) {
+@media (max-width: 980px) {
   .justify-768px {
     justify-content: center;
+  }
+  .fight-card-posts {
+    max-width: 210px;
   }
 }
 @media (max-width: 1024px) {
@@ -875,6 +895,13 @@ nav {
   }
   .about-me {
     padding: 100px 80px;
+  }
+  .blog-post-container {
+    gap: 1rem;
+  }
+  .blog-imgs {
+    width: 200px;
+    height: 150px;
   }
 }
 @media (max-width: 1440px) {
