@@ -12,7 +12,7 @@
   --contact-form-border-clicked: blue;
   --contact-form-border: black;
   --about-me-title: rgba(0, 0, 255, 0.525);
-  --about-me-bg-color: rgba(209, 209, 209, 0.164);
+  --about-me-bg-color: aliceblue;
   --copy-right-bg-color: rgba(248, 248, 248);
   --welcome-title: linear-gradient(#00ccff, #d400d4);
 }
@@ -638,14 +638,14 @@ nav {
 /* ABOUT ME PAGE */
 /* ABOUT ME SECTION */
 .deep-dive-bg-color {
-  background-color: rgba(133, 133, 133, 0.164);
+  background-color: var(--about-me-bg-color);
   height: 400px;
   padding: 20px;
   margin: 0px auto 250px auto;
   max-width: 1024px;
 }
 .about-me-ufc-bg-color {
-  background-color: rgba(133, 133, 133, 0.164);
+  background-color: var(--about-me-bg-color);
   height: 700px;
   padding: 20px;
   margin: 0px auto 400px auto;
@@ -864,6 +864,17 @@ nav {
   .fight-card-posts {
     padding: 0px;
     max-width: 210px;
+  }
+  .deep-dive-bg-color {
+    height: 100%;
+    margin-bottom: 0px;
+  }
+  .about-me-ufc-bg-color {
+    height: 100%;
+    margin-bottom: 0px;
+  }
+  .myself-container {
+    margin-bottom: 70px;
   }
   /* .blog-imgs {
     width: 200px;
