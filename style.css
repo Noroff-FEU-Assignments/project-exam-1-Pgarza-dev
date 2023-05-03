@@ -787,9 +787,9 @@ nav {
     justify-content: flex-end;
     background-color: #000000;
   }
-  .hidden-for-mobile {
+  /* .hidden-for-mobile {
     display: none;
-  }
+  } */
   .bg-img {
     display: none;
   }
