@@ -48,7 +48,7 @@ body {
   padding: 164px;
   color: black;
   animation: slogan 3s ease-out 1 both;
-  font-size: 5rem;
+  font-size: 2.3rem;
   z-index: 2;
   /* mix-blend-mode: lighten; */
   /* border: 2px solid black; */
@@ -197,7 +197,7 @@ nav {
   display: flex;
   justify-content: center;
   padding: 0 24px;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgb(51 51 51);
   position: fixed;
   z-index: 1;
   width: 100%;
@@ -375,13 +375,13 @@ nav {
   font-size: 15px;
   padding: 12px 12px;
   position: absolute;
-  bottom: 8px;
+  /* bottom: 8px; */
   width: 100%;
   text-align: center;
   background: rgba(0, 0, 0, 0.8);
   bottom: 0;
-  transition: 0.5s;
 }
+
 .fight-location-text {
   font-size: 1rem;
   color: white;
@@ -802,6 +802,12 @@ nav {
   .my-slides-on-mobile {
     width: 360px;
   }
+  .bg-img {
+    background-image: url(images/ufc\ pose.jpg);
+    background-size: cover;
+    background-repeat: inherit;
+    top: 30px;
+  }
 }
 @media (max-width: 425px) {
   img {
@@ -819,11 +825,10 @@ nav {
     height: 57px;
     padding: 0px 8px;
   }
-  /* .welcome-title {
-    font-size: 1.5rem;
-  } */
+  .welcome-title {
+    font-size: 1.8rem;
+  }
   .bg-img {
-    /* display: none; */
     background-image: url(images/ufc\ pose.jpg);
     background-size: cover;
     background-repeat: space;
@@ -871,6 +876,7 @@ nav {
   #nav-menu-bg-color {
     background-color: rgb(51 51 51);
   }
+
   .bg-img {
     background-image: url(images/ufc\ pose.jpg);
     background-size: contain;
@@ -890,6 +896,7 @@ nav {
     position: relative;
     margin-top: 171px;
   }
+
   /* .about-me {
     padding: 100px 80px;
   } */
@@ -988,17 +995,17 @@ nav {
     background-color: rgb(51 51 51);
   }
   .welcome-title {
-    font-size: 2.3rem;
+    /* font-size: 2.3rem; */
     padding: 0px;
     background-color: white;
     position: relative;
     margin-top: 170px;
   }
-  .bg-img {
+   .bg-img {
     background-size: contain;
     background-repeat: space;
-    top: 30px;
-  }
+    top: 30px; */
+  } 
   .about-me {
     /* padding: 100px 400px; */
     font-size: 1.5rem;
