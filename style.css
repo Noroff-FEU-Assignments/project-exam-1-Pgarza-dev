@@ -793,6 +793,16 @@ nav {
   font-weight: bold;
   text-decoration: underline;
 }
+/* --------------- LATEST-FIGHT-POST PAGE ----------*/
+.fight-post-header {
+  margin-top: 80px;
+}
+.post-paragraph-content {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  margin: 20px;
+  max-width: 1200px;
+}
 
 /* MEDIA QUERIES */
 @media (max-width: 375px) {
