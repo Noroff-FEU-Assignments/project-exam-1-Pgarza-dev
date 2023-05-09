@@ -882,16 +882,13 @@ nav {
     padding-top: 20px;
   }
 }
-@media (max-width: 426px) {
-  /* .for-mobile-title {
+@media (min-width: 426px) {
+  .for-mobile-title {
     display: none;
-  } */
+  }
 }
 
 @media (max-width: 768px) {
-  /* .for-mobile-title {
-    display: none;
-  } */
   #nav-menu-bg-color {
     background-color: rgb(51 51 51);
   }
