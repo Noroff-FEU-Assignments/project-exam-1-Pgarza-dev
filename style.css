@@ -940,6 +940,12 @@ nav {
     justify-content: center;
     padding-top: 20px;
   }
+  .fight-post-img {
+    width: 400px;
+  }
+  /* .fight-post-content-container {
+    padding: 10px;
+  } */
 }
 @media (min-width: 426px) {
   .for-mobile-title {
