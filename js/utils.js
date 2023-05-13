@@ -1,4 +1,4 @@
-const baseUrl = '' 
+const baseUrl = 'https://wordpress.com/posts/pgarza-dev.com::ProjectExam' 
 const endPoint = ''
 const specificEndPoint = ''
 async function fetchData(url) {
