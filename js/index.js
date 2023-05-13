@@ -1,5 +1,5 @@
-// export default fetchData
-export { fetchData, baseUrl, endPoint, specificEndPoint } from './utils.js'
+//  export default fetchData
+// export { fetchData, baseUrl, endPoint, specificEndPoint } from './utils.js'
 
 // Hamburguer Menu
 const hamburger = document.querySelector('.hamburger');
@@ -95,7 +95,7 @@ function plusSlidesThree(changeSlideThree) {
 }
 
 // Thumbnail image controls
-function currentSlideTwo(moveSlideThree) {
+function currentSlideThree(moveSlideThree) {
   showSlidesThree((slideIndexThree = moveSlideThree));
 }
 

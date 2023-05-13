@@ -1,5 +1,5 @@
-// export default fetchData
-export { fetchData, baseUrl, endPoint, specificEndPoint } from './utils.js'
+// // export default fetchData
+// export { fetchData, baseUrl, endPoint, specificEndPoint } from './utils.js'
 
 
 // Hamburguer Menu
