@@ -11,7 +11,7 @@ try {
     const response = await fetch(baseUrl)
     const data = await response.json()
     const posts = data.posts
-    console.log(data)
+    // console.log(data)
     
     // mySlides[i].innerHTML = ""
 
