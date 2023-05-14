@@ -1,5 +1,5 @@
 //  export default fetchData
-// export { fetchData, baseUrl, endPoint, specificEndPoint } from './utils.js'
+// import { fetchData, baseUrl} from './utils.js'
 
 // Hamburguer Menu
 const hamburger = document.querySelector('.hamburger');
@@ -16,7 +16,6 @@ document.querySelectorAll('.nav-link').forEach((n) =>
     navMenu.classList.remove('active');
   })
 );
-console.log(hamburger);
 
 // carousel 1
 let slideIndex = 1;
@@ -155,3 +154,20 @@ function showSlidesFour(carouselFour) {
 }
 
 showSlidesFour(slideIndexFour);
+
+
+const baseUrl = 'https://pgarza-dev.com/wp-json/wp/v2/posts' 
+// const endPoint = ''
+// const specificEndPoint = ''
+async function fetchData(baseUrl) {
+try {   
+    const response = await fetch(baseUrl)
+    const data = await response.json()
+    return data
+    
+
+}catch(error){
+    console.log({error: 
+        'Something went wrong with the API request'})
+}
+}
