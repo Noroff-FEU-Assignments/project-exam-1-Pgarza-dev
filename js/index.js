@@ -1,5 +1,32 @@
-//  export default fetchData
-// import { fetchData, baseUrl} from './utils.js'
+
+// // API
+const mySlides = document.querySelectorAll('.mySlides');
+const baseUrl = 'https://pgarza-dev.com/wp-json/wp/v2/posts' 
+// const endPoint = ''
+// const specificEndPoint = ''
+
+
+async function fetchData() {
+try {   
+    const response = await fetch(baseUrl)
+    const data = await response.json()
+    const posts = data.posts
+    console.log(data)
+    
+    // mySlides[i].innerHTML = ""
+
+    for (let i = 0; i < data.length; i++) {
+      console.log(data[i]);         
+}
+    
+    
+
+}catch(error){
+    console.log({error: 
+        'Something went wrong with the API request'})
+}
+}
+fetchData()
 
 // Hamburguer Menu
 const hamburger = document.querySelector('.hamburger');
@@ -155,19 +182,3 @@ function showSlidesFour(carouselFour) {
 
 showSlidesFour(slideIndexFour);
 
-
-const baseUrl = 'https://pgarza-dev.com/wp-json/wp/v2/posts' 
-// const endPoint = ''
-// const specificEndPoint = ''
-async function fetchData(baseUrl) {
-try {   
-    const response = await fetch(baseUrl)
-    const data = await response.json()
-    return data
-    
-
-}catch(error){
-    console.log({error: 
-        'Something went wrong with the API request'})
-}
-}
