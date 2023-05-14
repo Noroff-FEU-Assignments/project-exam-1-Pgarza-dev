@@ -1,3 +1,4 @@
+
 // const baseUrl = 'https://pgarza-dev.com/wp-json/wp/v2/posts' 
 // // const endPoint = ''
 // // const specificEndPoint = ''
@@ -8,13 +9,15 @@
 //     return data
     
 
+
+
 // }catch(error){
 //     console.log({error: 
 //         'Something went wrong with the API request'})
 // }
 // }
-
 // export {fetchData, baseUrl}
+
 
 // const ourProducts = document.querySelector(".productContainer");
 
