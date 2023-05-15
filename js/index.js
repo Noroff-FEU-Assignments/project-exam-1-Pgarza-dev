@@ -1,5 +1,6 @@
 
 // // API
+const slideShowContainer = document.querySelector('.slideshow-container');
 const mySlides = document.querySelectorAll('.mySlides');
 const baseUrl = 'https://pgarza-dev.com/wp-json/wp/v2/posts' 
 // const endPoint = ''
@@ -11,12 +12,81 @@ try {
     const response = await fetch(baseUrl)
     const data = await response.json()
     const posts = data.posts
-    // console.log(data)
+    console.log(data)
     
     // mySlides[i].innerHTML = ""
 
     for (let i = 0; i < data.length; i++) {
-      console.log(data[i]);         
+      console.log(data[i]);    
+      
+      if (!data[i].jetpack_featured_media_url[i]) {
+        continue;
+      }
+
+      slideShowContainer.innerHTML += 
+      
+    // Full-width images with number and caption text 
+    `<div class="mySlides fade my-slides-on-mobile ">
+      <div class="class-name">Latest Fight Posts</div>
+      <div class="img-title">${data[i].title.rendered}</div>
+      <img class="img-border img-zoom" src="images/PvsPaixoa.jpg">
+      <div class="text">
+        <p class="fight-location-text">Las Vegas, Nevada</p>
+        <a class="read-more" href="latest-fight-post.html">Read More</a>
+      </div>
+    </div>
+
+    <div class="mySlides fade my-slides-on-mobile">
+      <div class="class-name">Latest Fight Posts</div>
+      <div class="img-title">${data[i].title.rendered}</div>
+      <img class="img-border img-zoom" src="images/weigh in pic - Pablo.jpg">
+      <div class="text">
+        <p class="fight-location-text">Montreal, Canada</p>
+        <a class="read-more" href="">Read More</a>
+
+      </div>
+    </div>
+    <div class="mySlides fade my-slides-on-mobile">
+      <div class="class-name">Latest Fight Posts</div>
+      <div class="img-title">${data[i].title.rendered}</div>
+      <img class="img-border img-zoom" src="images/P vs Dustin p.jpg">
+      <div class="text">
+        <p class="fight-location-text">Anaheim, California</p>
+        <a class="read-more" href="">Read More</a>
+
+      </div>
+    </div>
+    <div class="mySlides fade my-slides-on-mobile">
+      <div class="class-name">Latest Fight Posts</div>
+      <div class="img-title">${data[i].title.rendered}</div>
+      <img class="img-border img-zoom" src="images/PvsBermudez.jpg">
+      <div class="text">
+        <p class="fight-location-text">New York, New York</p>
+        <a class="read-more" href="">Read More</a>
+
+      </div>
+    </div>
+    <div class="mySlides fade my-slides-on-mobile">
+      <div class="class-name">Latest Fight Posts</div>
+      <div class="img-title">${data[i].title.rendered}</div>
+      <img class="img-border img-zoom" src="images/PvsHominick.jpg">
+      <div class="text">
+        <p class="fight-location-text">Toronto, Canada</p>
+        <a class="read-more" href="">Read More</a>
+
+      </div>
+    </div>
+    <div class="mySlides fade my-slides-on-mobile">
+      <div class="class-name">Latest Fight Posts</div>
+      <div class="img-title">${data[i].title.rendered}</div>
+      <img class="img-border img-zoom" src="images/ufc fox weigh in.jpg">
+      <div class="text">
+        <p class="fight-location-text">Stockholm, Sweden</p>
+        <a class="read-more" href="">Read More</a>
+
+      </div>
+    </div>
+     `;
 }
     
     

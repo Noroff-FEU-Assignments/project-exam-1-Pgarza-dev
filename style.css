@@ -315,7 +315,10 @@ nav {
 }
 
 /*-------------- Slideshow container --------------*/
-.slideshow-container {
+.slideshow-container,
+.slideshow-container-two,
+.slideshow-container-three,
+.slideshow-container-four {
   max-width: 425px;
   position: relative;
   margin: auto;
@@ -332,6 +335,7 @@ nav {
 }
 .img-border {
   border-radius: 10px;
+  width: 100%;
 }
 .img-zoom:hover,
 .img-zoom:active {
@@ -430,6 +434,9 @@ nav {
 }
 
 /* The dots/bullets/indicators */
+.dot-container {
+  text-align: center;
+}
 .dot,
 .dotsTwo,
 .dotsThree,
