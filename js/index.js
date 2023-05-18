@@ -1,102 +1,142 @@
-
-// // API
+// API
 const slideShowContainer = document.querySelector('.slideshow-container');
+const slideShowContainerTwo = document.querySelector('.slideshow-container-two');
+const slideShowContainerThree = document.querySelector('.slideshow-container-three');
+const slideShowContainerFour = document.querySelector('.slideshow-container-four');
+
+const dotContainer = document.querySelector('.dot-container');
+const dotContainerTwo = document.querySelector('.dot-container-two');
+const dotContainerThree = document.querySelector('.dot-container-three');
+const dotContainerFour = document.querySelector('.dot-container-four');
 const mySlides = document.querySelectorAll('.mySlides');
-const baseUrl = 'https://pgarza-dev.com/wp-json/wp/v2/posts' 
-// const endPoint = ''
+
+const tagsUrl = 'https://pgarza-dev.com/wp-json/wp/v2/tags';
+const baseUrl = 'https://pgarza-dev.com/wp-json/wp/v2/posts'
+const totalPosts = '?per_page=100'
+const endPoint = '?category_name=fight-posts'
 // const specificEndPoint = ''
 
-
 async function fetchData() {
-try {   
-    const response = await fetch(baseUrl)
+  try {
+    const tagsResponse = await fetch(tagsUrl);
+    const tags = await tagsResponse.json();
+
+    const ufcTagId = tags.find(x => x.name === 'ufc-fights').id;
+    const backstageTagId = tags.find(x => x.name === 'backstage').id;
+    const fighterFriendsTagId = tags.find(x => x.name === 'fighter-friends').id;
+    const trainingCampsTagId = tags.find(x => x.name === 'training-camps').id;
+
+    const response = await fetch(baseUrl + totalPosts)
     const data = await response.json()
-    const posts = data.posts
+    const posts = data
     console.log(data)
-    
-    // mySlides[i].innerHTML = ""
 
-    for (let i = 0; i < data.length; i++) {
-      console.log(data[i]);    
-      
-      if (!data[i].jetpack_featured_media_url[i]) {
-        continue;
+    // slideShowContainer.innerHTML = "";
+
+    const fightPosts = posts.filter(post => post.tags.includes(ufcTagId));
+    const backstagePosts = posts.filter(post => post.tags.includes(backstageTagId));
+    const 
+     = posts.filter(post => post.tags.includes(fighterFriendsTagId));
+    const trainingCampPosts = posts.filter(post => post.tags.includes(trainingCampsTagId));
+
+    //Carousel 1 - Fight Posts - 1st API call
+    fightPosts.forEach(post => {
+      if (!post.jetpack_featured_media_url) {
+        console.log('No image found');
       }
-
-      slideShowContainer.innerHTML += 
-      
-    // Full-width images with number and caption text 
-    `<div class="mySlides fade my-slides-on-mobile ">
+      else {
+        slideShowContainer.innerHTML +=
+          `<div class="mySlides fade my-slides-on-mobile ">
       <div class="class-name">Latest Fight Posts</div>
-      <div class="img-title">${data[i].title.rendered}</div>
-      <img class="img-border img-zoom" src="images/PvsPaixoa.jpg">
+      <div class="img-title">${post.title.rendered}</div>
+      <img class="img-border img-zoom" src="${post.jetpack_featured_media_url}">
+      }">
       <div class="text">
-        <p class="fight-location-text">Las Vegas, Nevada</p>
+        <p class="fight-location-text">Location unknown</p>
         <a class="read-more" href="latest-fight-post.html">Read More</a>
       </div>
-    </div>
-
-    <div class="mySlides fade my-slides-on-mobile">
-      <div class="class-name">Latest Fight Posts</div>
-      <div class="img-title">${data[i].title.rendered}</div>
-      <img class="img-border img-zoom" src="images/weigh in pic - Pablo.jpg">
-      <div class="text">
-        <p class="fight-location-text">Montreal, Canada</p>
-        <a class="read-more" href="">Read More</a>
-
-      </div>
-    </div>
-    <div class="mySlides fade my-slides-on-mobile">
-      <div class="class-name">Latest Fight Posts</div>
-      <div class="img-title">${data[i].title.rendered}</div>
-      <img class="img-border img-zoom" src="images/P vs Dustin p.jpg">
-      <div class="text">
-        <p class="fight-location-text">Anaheim, California</p>
-        <a class="read-more" href="">Read More</a>
-
-      </div>
-    </div>
-    <div class="mySlides fade my-slides-on-mobile">
-      <div class="class-name">Latest Fight Posts</div>
-      <div class="img-title">${data[i].title.rendered}</div>
-      <img class="img-border img-zoom" src="images/PvsBermudez.jpg">
-      <div class="text">
-        <p class="fight-location-text">New York, New York</p>
-        <a class="read-more" href="">Read More</a>
-
-      </div>
-    </div>
-    <div class="mySlides fade my-slides-on-mobile">
-      <div class="class-name">Latest Fight Posts</div>
-      <div class="img-title">${data[i].title.rendered}</div>
-      <img class="img-border img-zoom" src="images/PvsHominick.jpg">
-      <div class="text">
-        <p class="fight-location-text">Toronto, Canada</p>
-        <a class="read-more" href="">Read More</a>
-
-      </div>
-    </div>
-    <div class="mySlides fade my-slides-on-mobile">
-      <div class="class-name">Latest Fight Posts</div>
-      <div class="img-title">${data[i].title.rendered}</div>
-      <img class="img-border img-zoom" src="images/ufc fox weigh in.jpg">
-      <div class="text">
-        <p class="fight-location-text">Stockholm, Sweden</p>
-        <a class="read-more" href="">Read More</a>
-
-      </div>
-    </div>
-     `;
-}
-    
+      </div>`
+      }
+    });
     
 
-}catch(error){
-    console.log({error: 
-        'Something went wrong with the API request'})
+    for (i = 0; i < fightPosts.length; i++)
+    {
+      dotContainer.innerHTML += 
+      `
+      <span class="dot" onclick="currentSlide(${i+1})"></span>
+      `
+    }
+
+    //Carousel 2 - Fighter Friends Posts - 2nd API call
+    backstagePosts.forEach(post => {
+      if (!post.jetpack_featured_media_url) {
+        console.log('No image found');
+      }
+      else {
+        slideShowContainerTwo.innerHTML +=
+          `<div class="mySlides-two fade my-slides-on-mobile ">
+            <div class="class-name">Behind the Scenes</div>
+            <div class="img-title">${post.title.rendered}</div>
+            <img class="img-border img-zoom" src="${post.jetpack_featured_media_url}">
+            }">
+            <div class="text">
+              <p class="fight-location-text">Winning doesn't always look pretty</p>
+              <a class="read-more" href="">Read More</a>
+            </div>
+          </div>`
+      }
+    });
+
+    for (i = 0; i < backstagePosts.length; i++)
+    {
+      dotContainerTwo.innerHTML += 
+      `
+      <span class="dotsTwo" onclick="currentSlideTwo(${i+1})"></span>
+      `
+    }
+    
+    //Carousel 3 - Fighter Friends Posts - 3rd API call
+    fighterFriends.forEach(post => {
+      if (!post.jetpack_featured_media_url) {
+        console.log('No image found');
+      }
+      else {
+        slideShowContainerThree.innerHTML +=
+          `<div class="mySlides-two fade my-slides-on-mobile ">
+            <div class="class-name">Behind the Scenes</div>
+            <div class="img-title">${post.title.rendered}</div>
+            <img class="img-border img-zoom" src="${post.jetpack_featured_media_url}">
+            }">
+            <div class="text">
+              <p class="fight-location-text">Winning doesn't always look pretty</p>
+              <a class="read-more" href="">Read More</a>
+            </div>
+          </div>`
+      }
+    });
+
+    for (i = 0; i < fighterFriends.length; i++)
+    {
+      dotContainerThree.innerHTML += 
+      `
+      <span class="dotsThree" onclick="currentSlideTwo(${i+1})"></span>
+      `
+    }
+
+  } catch (error) {
+    console.log({
+      error:
+        'Something went wrong with the API request'
+    })
+  }
+  finally {
+    console.log('API request completed.')
+  }
 }
-}
-fetchData()
+
+
+
 
 // Hamburguer Menu
 const hamburger = document.querySelector('.hamburger');
@@ -117,20 +157,12 @@ document.querySelectorAll('.nav-link').forEach((n) =>
 // carousel 1
 let slideIndex = 1;
 
-// Next/previous controls
-function plusSlides(plusSlides) {
-  showSlides((slideIndex += plusSlides));
-}
-
-// Thumbnail image controls
-function currentSlide(changeSlide) {
-  showSlides((slideIndex = changeSlide));
-}
-
 function showSlides(carouselOne) {
   let i;
   let slides = document.getElementsByClassName('mySlides');
   let dots = document.getElementsByClassName('dot');
+
+  console.log(slideIndex);
   if (carouselOne > slides.length) {
     slideIndex = 1;
   }
@@ -143,13 +175,32 @@ function showSlides(carouselOne) {
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(' active', '');
   }
-  slides[slideIndex - 1].style.display = 'block';
-  dots[slideIndex - 1].className += ' active';
+  console.log(slides);
+
+  const slide = slides[slideIndex - 1];
+  console.log(slide);
+  if (slide)
+    slide.style.display = 'block';
+  const dot = dots[slideIndex - 1];
+  console.log(dot);
+  if (dot)
+    dot.className += ' active';
 }
-showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(plusSlides) {
+  showSlides((slideIndex += plusSlides));
+}
+
+// Thumbnail image controls
+function currentSlide(changeSlide) {
+  showSlides((slideIndex = changeSlide));
+}
 
 // Caraousel 2
 let slideIndexTwo = 1;
+
+
 
 // Next/previous controls
 function plusSlidesTwo(changeSlideTwo) {
@@ -179,12 +230,14 @@ function showSlidesTwo(carouselTwo) {
   }
   slidesTwo[slideIndexTwo - 1].style.display = 'block';
   dotsTwo[slideIndexTwo - 1].className += ' active';
+
+  
+
 }
-showSlidesTwo(slideIndexTwo);
+
 
 // Caraousel 3
 let slideIndexThree = 1;
-
 // Next/previous controls
 function plusSlidesThree(changeSlideThree) {
   showSlidesThree((slideIndexThree += changeSlideThree));
@@ -215,11 +268,10 @@ function showSlidesThree(carouselThree) {
   slidesThree[slideIndexThree - 1].style.display = 'block';
   dotsThree[slideIndexThree - 1].className += ' active';
 }
-showSlidesThree(slideIndexThree);
+
 
 // Caraousel 4
 let slideIndexFour = 1;
-
 // Next/previous controls
 function plusSlidesFour(changeSlideFour) {
   showSlidesFour((slideIndexFour += changeSlideFour));
@@ -250,5 +302,9 @@ function showSlidesFour(carouselFour) {
   dotsFour[slideIndexFour - 1].className += ' active';
 }
 
-showSlidesFour(slideIndexFour);
-
+fetchData().then(() => {
+  showSlides(slideIndex);
+  showSlidesTwo(slideIndexTwo);
+  showSlidesThree(slideIndexThree);
+  showSlidesFour(slideIndexFour);
+});
