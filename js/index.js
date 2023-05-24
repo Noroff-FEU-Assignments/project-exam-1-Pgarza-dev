@@ -1,4 +1,6 @@
 // API
+// import { tagsUrl, baseUrl, totalPosts, endPoint} from './utils.js'
+
 const slideShowContainer = document.querySelector('.slideshow-container');
 const slideShowContainerTwo = document.querySelector('.slideshow-container-two');
 const slideShowContainerThree = document.querySelector('.slideshow-container-three');
@@ -23,20 +25,20 @@ async function fetchData() {
 
     const ufcTagId = tags.find(x => x.name === 'ufc-fights').id;
     const backstageTagId = tags.find(x => x.name === 'backstage').id;
-    const fighterFriendsTagId = tags.find(x => x.name === 'fighter-friends').id;
-    const trainingCampsTagId = tags.find(x => x.name === 'training-camps').id;
+    // const fighterFriendsTagId = tags.find(x => x.name === 'fighter-friends').id;
+    // const trainingCampsTagId = tags.find(x => x.name === 'training-camps').id;
 
     const response = await fetch(baseUrl + totalPosts)
     const data = await response.json()
     const posts = data
-    // console.log(data)
+    console.log(data)
 
     // slideShowContainer.innerHTML = "";
 
     const fightPosts = posts.filter(post => post.tags.includes(ufcTagId));
     const backstagePosts = posts.filter(post => post.tags.includes(backstageTagId));
-    const fighterFriends = posts.filter(post => post.tags.includes(fighterFriendsTagId));
-    const trainingCampPosts = posts.filter(post => post.tags.includes(trainingCampsTagId));
+    // const fighterFriends = posts.filter(post => post.tags.includes(fighterFriendsTagId));
+    // const trainingCampPosts = posts.filter(post => post.tags.includes(trainingCampsTagId));
 
     //Carousel 1 - Fight Posts - 1st API call
     fightPosts.forEach(post => {

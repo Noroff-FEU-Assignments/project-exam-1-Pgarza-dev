@@ -1,3 +1,9 @@
+export const tagsUrl = 'https://pgarza-dev.com/wp-json/wp/v2/tags';
+export const baseUrl = 'https://pgarza-dev.com/wp-json/wp/v2/posts'
+export const totalPosts = '?per_page=100'
+export const endPoint = '?category_name=fight-posts'
+
+
 
 // const baseUrl = 'https://pgarza-dev.com/wp-json/wp/v2/posts' 
 // // const endPoint = ''
