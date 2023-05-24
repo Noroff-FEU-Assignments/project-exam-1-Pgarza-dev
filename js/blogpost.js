@@ -7,18 +7,45 @@ console.log('blogpost.js is connected');
 
 const tagsUrl = 'https://pgarza-dev.com/wp-json/wp/v2/tags';
 const baseUrl = 'https://pgarza-dev.com/wp-json/wp/v2/posts'
-const totalPosts = '?per_page=100'
-const endPoint = '?category_name=fight-posts'
+// const totalPosts = '?per_page=100'
+// const endPoint = '?category_name=fight-posts'
 
 async function fetchData() {
 try {
-    const response = await fetch(baseUrl + totalPosts)
-    const data = await response.json()
-    // return data
-    console.log(data)
+  const tagsResponse = await fetch(tagsUrl);
+  const tags = await tagsResponse.json();
+
+  const ufcTagId = tags.find(x => x.name === 'ufc-fights').id;
+  const backstageTagId = tags.find(x => x.name === 'backstage').id;
+
+  const response = await fetch(baseUrl)
+  const data = await response.json()
+  const posts = data
+  console.log(data)
+
+
+  // const fightPosts = posts.filter(post => post.tags.includes(ufcTagId));
+  // const backstagePosts = posts.filter(post => post.tags.includes(backstageTagId));
     
+
+  const blogPostsContainer = document.querySelector('.blog-post-container');
+  for (let i =0; i < posts.length; i++){
+    
+    blogPostsContainer.innerHTML += `<article class="fight-card-posts">
+  <div>
+    <img class="blog-imgs" src=${posts[i].jetpack_featured_media_url} alt="Pablo Garza vs Fredson Paixão face off.">
+    <h4>${posts[i].title.rendered}</h4>
+    <p>${posts[i].date_gmt}</p>
+  </div>
+  <div>
+    <p>${posts[i].excerpt.rendered}</p>
+  </div>
+  <div>
+    <a class="blog-post-read-more" href="">Read More</a>
+  </div>
+</article>`;
 }
-catch(error){
+} catch(error){
     console.log({error:
         'Something went wrong with the API request'})
 }
@@ -26,31 +53,11 @@ finally{
     console.log('API request completed.')  
 }
 }
-fetchData()
+fetchData();
 
-function createPosts(data){
-  const blogPostsContainer = document.querySelector('.blog-post-container')
-  for (i =0; i < data.length; i++){
-    blogPostsContainer.innerHTML += `<article class="fight-card-posts">
-  <div>
-    <img class="blog-imgs" src="images/PvsPaixoa.jpg" alt="Pablo Garza vs Fredson Paixão face off.">
-    <h4>The Ultimate Fighter Season 12 Finale</h4>
-    <p>Posted: 01/05/2023</p>
-  </div>
-  <div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo ea quas perferendis voluptas
-      doloremque
-      illo vero amet consectetur magnam? Aspernatur totam, unde id obcaecati quidem accusamus omnis animi
-      voluptas
-      delectus?</p>
-  </div>
-  <div>
-    <a class="blog-post-read-more" href="">Read More</a>
-  </div>
-</article>`
-};
-  }
-createPosts()
+  
+  
+
 
 
 
