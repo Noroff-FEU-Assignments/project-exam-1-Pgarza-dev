@@ -29,14 +29,13 @@ async function fetchData() {
     const response = await fetch(baseUrl + totalPosts)
     const data = await response.json()
     const posts = data
-    console.log(data)
+    // console.log(data)
 
     // slideShowContainer.innerHTML = "";
 
     const fightPosts = posts.filter(post => post.tags.includes(ufcTagId));
     const backstagePosts = posts.filter(post => post.tags.includes(backstageTagId));
-    const 
-     = posts.filter(post => post.tags.includes(fighterFriendsTagId));
+    const fighterFriends = posts.filter(post => post.tags.includes(fighterFriendsTagId));
     const trainingCampPosts = posts.filter(post => post.tags.includes(trainingCampsTagId));
 
     //Carousel 1 - Fight Posts - 1st API call
@@ -120,7 +119,36 @@ async function fetchData() {
     {
       dotContainerThree.innerHTML += 
       `
-      <span class="dotsThree" onclick="currentSlideTwo(${i+1})"></span>
+      <span class="dotsThree" onclick="currentSlideThree(${i+1})"></span>
+      `
+    }
+
+    //Carousel 4 - Fighter Friends Posts - 4th API call
+    trainingCampPosts.forEach(post => {
+      if (!post.jetpack_featured_media_url) {
+        console.log('No image found');
+      }
+      else {
+        slideShowContainerFour.innerHTML +=
+          `<div class="mySlides fade my-slides-on-mobile ">
+      <div class="class-name">Latest Fight Posts</div>
+      <div class="img-title">${post.title.rendered}</div>
+      <img class="img-border img-zoom" src="${post.jetpack_featured_media_url}">
+      }">
+      <div class="text">
+        <p class="fight-location-text">Location unknown</p>
+        <a class="read-more" href="latest-fight-post.html">Read More</a>
+      </div>
+      </div>`
+      }
+    });
+    
+
+    for (i = 0; i < trainingCampPosts.length; i++)
+    {
+      dotContainerFour.innerHTML += 
+      `
+      <span class="dotsFour" onclick="currentSlideFour(${i+1})"></span>
       `
     }
 
@@ -134,9 +162,6 @@ async function fetchData() {
     console.log('API request completed.')
   }
 }
-
-
-
 
 // Hamburguer Menu
 const hamburger = document.querySelector('.hamburger');
@@ -200,8 +225,6 @@ function currentSlide(changeSlide) {
 // Caraousel 2
 let slideIndexTwo = 1;
 
-
-
 // Next/previous controls
 function plusSlidesTwo(changeSlideTwo) {
   showSlidesTwo((slideIndexTwo += changeSlideTwo));
@@ -216,6 +239,7 @@ function showSlidesTwo(carouselTwo) {
   let i;
   let slidesTwo = document.getElementsByClassName('mySlides-two');
   let dotsTwo = document.getElementsByClassName('dotsTwo');
+
   if (carouselTwo > slidesTwo.length) {
     slideIndexTwo = 1;
   }
@@ -228,11 +252,19 @@ function showSlidesTwo(carouselTwo) {
   for (i = 0; i < dotsTwo.length; i++) {
     dotsTwo[i].className = dotsTwo[i].className.replace(' active', '');
   }
-  slidesTwo[slideIndexTwo - 1].style.display = 'block';
-  dotsTwo[slideIndexTwo - 1].className += ' active';
-
+  console.log(slidesTwo);
   
 
+  // const slideTwo = slidesTwo[slideIndexTwo - 1];
+  // console.log(slideTwo);
+  // if (slideTwo)
+  //   slideTwo.style.display = 'block';
+  // const dotsTwo = dotsTwo[slideIndexTwo - 1];
+  // console.log(dotTwo);
+  // if (dotsTwo)
+  //   dotsTwo.className += ' active';
+  slidesTwo[slideIndexTwo - 1].style.display = 'block';
+  dotsTwo[slideIndexTwo - 1].className += ' active';
 }
 
 
