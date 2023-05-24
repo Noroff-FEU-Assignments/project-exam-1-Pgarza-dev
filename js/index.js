@@ -96,61 +96,61 @@ async function fetchData() {
     }
     
     //Carousel 3 - Fighter Friends Posts - 3rd API call
-    fighterFriends.forEach(post => {
-      if (!post.jetpack_featured_media_url) {
-        console.log('No image found');
-      }
-      else {
-        slideShowContainerThree.innerHTML +=
-          `<div class="mySlides-two fade my-slides-on-mobile ">
-            <div class="class-name">Behind the Scenes</div>
-            <div class="img-title">${post.title.rendered}</div>
-            <img class="img-border img-zoom" src="${post.jetpack_featured_media_url}">
-            }">
-            <div class="text">
-              <p class="fight-location-text">Winning doesn't always look pretty</p>
-              <a class="read-more" href="">Read More</a>
-            </div>
-          </div>`
-      }
-    });
+    // fighterFriends.forEach(post => {
+    //   if (!post.jetpack_featured_media_url) {
+    //     console.log('No image found');
+    //   }
+    //   else {
+    //     slideShowContainerThree.innerHTML +=
+    //       `<div class="mySlides-two fade my-slides-on-mobile ">
+    //         <div class="class-name">Behind the Scenes</div>
+    //         <div class="img-title">${post.title.rendered}</div>
+    //         <img class="img-border img-zoom" src="${post.jetpack_featured_media_url}">
+    //         }">
+    //         <div class="text">
+    //           <p class="fight-location-text">Winning doesn't always look pretty</p>
+    //           <a class="read-more" href="">Read More</a>
+    //         </div>
+    //       </div>`
+    //   }
+    // });
 
-    for (i = 0; i < fighterFriends.length; i++)
-    {
-      dotContainerThree.innerHTML += 
-      `
-      <span class="dotsThree" onclick="currentSlideThree(${i+1})"></span>
-      `
-    }
+    // for (i = 0; i < fighterFriends.length; i++)
+    // {
+    //   dotContainerThree.innerHTML += 
+    //   `
+    //   <span class="dotsThree" onclick="currentSlideThree(${i+1})"></span>
+    //   `
+    // }
 
     //Carousel 4 - Fighter Friends Posts - 4th API call
-    trainingCampPosts.forEach(post => {
-      if (!post.jetpack_featured_media_url) {
-        console.log('No image found');
-      }
-      else {
-        slideShowContainerFour.innerHTML +=
-          `<div class="mySlides fade my-slides-on-mobile ">
-      <div class="class-name">Latest Fight Posts</div>
-      <div class="img-title">${post.title.rendered}</div>
-      <img class="img-border img-zoom" src="${post.jetpack_featured_media_url}">
-      }">
-      <div class="text">
-        <p class="fight-location-text">Location unknown</p>
-        <a class="read-more" href="latest-fight-post.html">Read More</a>
-      </div>
-      </div>`
-      }
-    });
+    // trainingCampPosts.forEach(post => {
+    //   if (!post.jetpack_featured_media_url) {
+    //     console.log('No image found');
+    //   }
+    //   else {
+    //     slideShowContainerFour.innerHTML +=
+    //       `<div class="mySlides fade my-slides-on-mobile ">
+    //   <div class="class-name">Latest Fight Posts</div>
+    //   <div class="img-title">${post.title.rendered}</div>
+    //   <img class="img-border img-zoom" src="${post.jetpack_featured_media_url}">
+    //   }">
+    //   <div class="text">
+    //     <p class="fight-location-text">Location unknown</p>
+    //     <a class="read-more" href="latest-fight-post.html">Read More</a>
+    //   </div>
+    //   </div>`
+    //   }
+    // });
     
 
-    for (i = 0; i < trainingCampPosts.length; i++)
-    {
-      dotContainerFour.innerHTML += 
-      `
-      <span class="dotsFour" onclick="currentSlideFour(${i+1})"></span>
-      `
-    }
+    // for (i = 0; i < trainingCampPosts.length; i++)
+    // {
+    //   dotContainerFour.innerHTML += 
+    //   `
+    //   <span class="dotsFour" onclick="currentSlideFour(${i+1})"></span>
+    //   `
+    // }
 
   } catch (error) {
     console.log({
@@ -269,74 +269,74 @@ function showSlidesTwo(carouselTwo) {
 
 
 // Caraousel 3
-let slideIndexThree = 1;
+// let slideIndexThree = 1;
 // Next/previous controls
-function plusSlidesThree(changeSlideThree) {
-  showSlidesThree((slideIndexThree += changeSlideThree));
-}
+// function plusSlidesThree(changeSlideThree) {
+//   showSlidesThree((slideIndexThree += changeSlideThree));
+// }
 
 // Thumbnail image controls
-function currentSlideThree(moveSlideThree) {
-  showSlidesThree((slideIndexThree = moveSlideThree));
-}
+// function currentSlideThree(moveSlideThree) {
+//   showSlidesThree((slideIndexThree = moveSlideThree));
+// }
 
-function showSlidesThree(carouselThree) {
-  let i;
-  let slidesThree = document.getElementsByClassName('mySlides-three');
-  let dotsThree = document.getElementsByClassName('dotsThree');
+// function showSlidesThree(carouselThree) {
+//   let i;
+//   let slidesThree = document.getElementsByClassName('mySlides-three');
+//   let dotsThree = document.getElementsByClassName('dotsThree');
 
-  if (carouselThree > slidesThree.length) {
-    slideIndexThree = 1;
-  }
-  if (carouselThree < 1) {
-    slideIndexThree = slidesThree.length;
-  }
-  for (i = 0; i < slidesThree.length; i++) {
-    slidesThree[i].style.display = 'none';
-  }
-  for (i = 0; i < dotsThree.length; i++) {
-    dotsThree[i].className = dotsThree[i].className.replace(' active', '');
-  }
-  slidesThree[slideIndexThree - 1].style.display = 'block';
-  dotsThree[slideIndexThree - 1].className += ' active';
-}
+//   if (carouselThree > slidesThree.length) {
+//     slideIndexThree = 1;
+//   }
+//   if (carouselThree < 1) {
+//     slideIndexThree = slidesThree.length;
+//   }
+//   for (i = 0; i < slidesThree.length; i++) {
+//     slidesThree[i].style.display = 'none';
+//   }
+//   for (i = 0; i < dotsThree.length; i++) {
+//     dotsThree[i].className = dotsThree[i].className.replace(' active', '');
+//   }
+//   slidesThree[slideIndexThree - 1].style.display = 'block';
+//   dotsThree[slideIndexThree - 1].className += ' active';
+// }
 
 
 // Caraousel 4
-let slideIndexFour = 1;
+// let slideIndexFour = 1;
 // Next/previous controls
-function plusSlidesFour(changeSlideFour) {
-  showSlidesFour((slideIndexFour += changeSlideFour));
-}
+// function plusSlidesFour(changeSlideFour) {
+//   showSlidesFour((slideIndexFour += changeSlideFour));
+// }
 
 // Thumbnail image controls
-function currentSlideFour(moveSlideFour) {
-  showSlidesFour((slideIndexFour = moveSlideFour));
-}
+// function currentSlideFour(moveSlideFour) {
+//   showSlidesFour((slideIndexFour = moveSlideFour));
+// }
 
-function showSlidesFour(carouselFour) {
-  let i;
-  let slidesFour = document.getElementsByClassName('mySlides-four');
-  let dotsFour = document.getElementsByClassName('dotsFour');
-  if (carouselFour > slidesFour.length) {
-    slideIndexFour = 1;
-  }
-  if (carouselFour < 1) {
-    slideIndexFour = slidesFour.length;
-  }
-  for (i = 0; i < slidesFour.length; i++) {
-    slidesFour[i].style.display = 'none';
-  }
-  for (i = 0; i < dotsFour.length; i++) {
-    dotsFour[i].className = dotsFour[i].className.replace(' active', '');
-  }
-  slidesFour[slideIndexFour - 1].style.display = 'block';
-  dotsFour[slideIndexFour - 1].className += ' active';
-}
+// function showSlidesFour(carouselFour) {
+//   let i;
+//   let slidesFour = document.getElementsByClassName('mySlides-four');
+//   let dotsFour = document.getElementsByClassName('dotsFour');
+//   if (carouselFour > slidesFour.length) {
+//     slideIndexFour = 1;
+//   }
+//   if (carouselFour < 1) {
+//     slideIndexFour = slidesFour.length;
+//   }
+//   for (i = 0; i < slidesFour.length; i++) {
+//     slidesFour[i].style.display = 'none';
+//   }
+//   for (i = 0; i < dotsFour.length; i++) {
+//     dotsFour[i].className = dotsFour[i].className.replace(' active', '');
+//   }
+//   slidesFour[slideIndexFour - 1].style.display = 'block';
+//   dotsFour[slideIndexFour - 1].className += ' active';
+// }
 
 fetchData().then(() => {
   showSlides(slideIndex);
   showSlidesTwo(slideIndexTwo);
-  showSlidesThree(slideIndexThree);
-  showSlidesFour(slideIndexFour);
+  // showSlidesThree(slideIndexThree);
+  // showSlidesFour(slideIndexFour);
 });
