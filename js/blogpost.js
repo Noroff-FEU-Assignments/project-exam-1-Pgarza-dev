@@ -4,7 +4,7 @@
 console.log('blogpost.js is connected');
 
 
-
+const loader = document.querySelector('.loader');
 const tagsUrl = 'https://pgarza-dev.com/wp-json/wp/v2/tags';
 const baseUrl = 'https://pgarza-dev.com/wp-json/wp/v2/posts'
 // const totalPosts = '?per_page=100'
@@ -29,8 +29,8 @@ try {
     
 
   const blogPostsContainer = document.querySelector('.blog-post-container');
-  for (let i =0; i < posts.length; i++){
-    
+  loader.style.display = 'none';
+  for (let i =0; i < posts.length; i++){    
     blogPostsContainer.innerHTML += `<article class="fight-card-posts">
   <div>
     <img class="blog-imgs" src=${posts[i].jetpack_featured_media_url} alt="Pablo Garza vs Fredson Paixão face off.">
