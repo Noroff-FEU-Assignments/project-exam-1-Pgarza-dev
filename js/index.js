@@ -54,8 +54,8 @@ async function fetchData() {
       <img class="img-border img-zoom" src="${post.jetpack_featured_media_url}">
       }">
       <div class="text">
-        <p class="fight-location-text">Location unknown</p>
-        <a class="read-more" href="latest-fight-post.html">Read More</a>
+        <p class="fight-location-text">${post.excerpt.rendered}</p>
+        <a class="read-more" href="latestfightpost.html">Read More</a>
       </div>
       </div>`
       }
@@ -83,8 +83,8 @@ async function fetchData() {
             <img class="img-border img-zoom" src="${post.jetpack_featured_media_url}">
             }">
             <div class="text">
-              <p class="fight-location-text">Winning doesn't always look pretty</p>
-              <a class="read-more" href="">Read More</a>
+              <p class="fight-location-text">${post.excerpt.rendered}</p>
+              <a class="read-more" href="latestfightpost.html">Read More</a>
             </div>
           </div>`
       }
