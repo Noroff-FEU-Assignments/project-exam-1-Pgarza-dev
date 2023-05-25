@@ -1,6 +1,6 @@
 // API
 // import { tagsUrl, baseUrl, totalPosts, endPoint} from './utils.js'
-
+const loader = document.querySelector('.loader');
 const slideShowContainer = document.querySelector('.slideshow-container');
 const slideShowContainerTwo = document.querySelector('.slideshow-container-two');
 const slideShowContainerThree = document.querySelector('.slideshow-container-three');
@@ -41,11 +41,12 @@ async function fetchData() {
     // const trainingCampPosts = posts.filter(post => post.tags.includes(trainingCampsTagId));
 
     //Carousel 1 - Fight Posts - 1st API call
+    loader.style.display = 'none';
+
     fightPosts.forEach(post => {
       if (!post.jetpack_featured_media_url) {
         console.log('No image found');
-      }
-      else {
+      }      else {
         slideShowContainer.innerHTML +=
           `<div class="mySlides fade my-slides-on-mobile ">
       <div class="class-name">Latest Fight Posts</div>
