@@ -1,3 +1,5 @@
+console.log('latestfightposts.js loaded');
+
 const tagsUrl = 'https://pgarza-dev.com/wp-json/wp/v2/tags';
 const baseUrl = 'https://pgarza-dev.com/wp-json/wp/v2/posts'
 // const totalPosts = '?per_page=100'
@@ -20,5 +22,5 @@ async function getPost() {
     }
 }
 
-fetch(baseUrl)
+getPost(baseUrl)
 
