@@ -823,7 +823,7 @@ nav {
   flex-direction: row;
   flex-wrap: wrap;
   margin-left: 365px;
-  margin-top: 50px;
+  margin-top: 0px;
 }
 .fight-post-container {
   display: flex;
