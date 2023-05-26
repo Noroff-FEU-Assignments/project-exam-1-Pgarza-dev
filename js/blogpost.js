@@ -7,8 +7,8 @@ console.log('blogpost.js is connected');
 const loader = document.querySelector('.loader');
 const tagsUrl = 'https://pgarza-dev.com/wp-json/wp/v2/tags';
 const baseUrl = 'https://pgarza-dev.com/wp-json/wp/v2/posts'
-// const totalPosts = '?per_page=100'
-// const endPoint = '?category_name=fight-posts'
+const totalPosts = '?per_page=100'
+const endPoint = '?category_name=fight-posts'
 
 async function fetchData() {
 try {
@@ -18,14 +18,14 @@ try {
   const ufcTagId = tags.find(x => x.name === 'ufc-fights').id;
   const backstageTagId = tags.find(x => x.name === 'backstage').id;
 
-  const response = await fetch(baseUrl)
+  const response = await fetch(baseUrl + totalPosts)
   const data = await response.json()
   const posts = data
   console.log(data)
 
 
-  // const fightPosts = posts.filter(post => post.tags.includes(ufcTagId));
-  // const backstagePosts = posts.filter(post => post.tags.includes(backstageTagId));
+  const fightPosts = posts.filter(post => post.tags.includes(ufcTagId));
+  const backstagePosts = posts.filter(post => post.tags.includes(backstageTagId));
     
 
   const blogPostsContainer = document.querySelector('.blog-post-container');

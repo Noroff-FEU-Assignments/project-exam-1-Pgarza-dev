@@ -99,6 +99,8 @@ async function fetchData() {
     }
     
     // Carousel 3 - Fighter Friends Posts - 3rd API call
+    loader.style.display = 'none';
+
     fighterFriends.forEach(post => {
       if (!post.jetpack_featured_media_url) {
         console.log('No image found');
@@ -106,12 +108,12 @@ async function fetchData() {
       else {
         slideShowContainerThree.innerHTML +=
           `<div class="mySlides-three fade my-slides-on-mobile ">
-            <div class="class-name">Behind the Scenes</div>
+            <div class="class-name">Fighter Friends</div>
             <div class="img-title">${post.title.rendered}</div>
             <img class="img-border img-zoom" src="${post.jetpack_featured_media_url}">
             }">
             <div class="text">
-              <p class="fight-location-text">Winning doesn't always look pretty</p>
+              <p class="fight-location-text">${post.excerpt.rendered}</p>
               <a class="read-more" href="">Read More</a>
             </div>
           </div>`
@@ -127,6 +129,8 @@ async function fetchData() {
     }
 
     // Carousel 4 - Fighter Friends Posts - 4th API call
+    loader.style.display = 'none';
+
     trainingCampPosts.forEach(post => {
       if (!post.jetpack_featured_media_url) {
         console.log('No image found');
@@ -134,12 +138,12 @@ async function fetchData() {
       else {
         slideShowContainerFour.innerHTML +=
           `<div class="mySlides-four fade my-slides-on-mobile ">
-      <div class="class-name">Latest Fight Posts</div>
+      <div class="class-name">Training Camps</div>
       <div class="img-title">${post.title.rendered}</div>
       <img class="img-border img-zoom" src="${post.jetpack_featured_media_url}">
       }">
       <div class="text">
-        <p class="fight-location-text">Location unknown</p>
+        <p class="fight-location-text">${post.excerpt.rendered}</p>
         <a class="read-more" href="latest-fight-post.html">Read More</a>
       </div>
       </div>`
