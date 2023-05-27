@@ -55,7 +55,7 @@ async function fetchData() {
       }">
       <div class="text">
         <p class="fight-location-text">${post.excerpt.rendered}</p>
-        <a class="read-more" href="latestfightpost.html">Read More</a>
+        <a class="read-more" href="latestfightpost.html?=${post.id}">Read More</a>
       </div>
       </div>`
       }
@@ -84,7 +84,7 @@ async function fetchData() {
             }">
             <div class="text">
               <p class="fight-location-text">${post.excerpt.rendered}</p>
-              <a class="read-more" href="latestfightpost.html">Read More</a>
+              <a class="read-more" href="#" onclick="showPost(${post.id})">Read More</a>
             </div>
           </div>`
       }
@@ -114,7 +114,7 @@ async function fetchData() {
             }">
             <div class="text">
               <p class="fight-location-text">${post.excerpt.rendered}</p>
-              <a class="read-more" href="">Read More</a>
+              <a class="read-more" href="latestfightpost.html?=${post.id}">Read More</a>
             </div>
           </div>`
       }
@@ -144,7 +144,7 @@ async function fetchData() {
       }">
       <div class="text">
         <p class="fight-location-text">${post.excerpt.rendered}</p>
-        <a class="read-more" href="latest-fight-post.html">Read More</a>
+        <a class="read-more" href="latestfightpost.html?=${post.id}">Read More</a>
       </div>
       </div>`
       }
