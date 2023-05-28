@@ -23,7 +23,7 @@ async function getPost() {
     console.log(post);
 
     postContainer.innerHTML = '';
-
+    loader.style.display = 'none';
       postContainer.innerHTML += `<div>
         <h1 class="fight-post-header">${post.title.rendered}</h1>
         <img class="fight-post-img" src="${post.jetpack_featured_media_url}" alt="Pablo Garza and Fredson Paixoa face off">
