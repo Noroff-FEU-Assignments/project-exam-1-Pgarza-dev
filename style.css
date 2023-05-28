@@ -780,7 +780,7 @@ nav {
   align-items: center;
 }
 .dropbtn {
-  background-color: #04AA6D;
+  background-color: rgba(57, 57, 82, 0.53);
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -815,13 +815,13 @@ nav {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {background-color: var(--about-me-title);}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropdown:hover .dropbtn {background-color: var(--about-me-title)}
 
 .blog-post-page-layout {
   display: flex;
