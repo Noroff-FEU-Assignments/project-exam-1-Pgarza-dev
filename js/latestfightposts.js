@@ -11,7 +11,7 @@ document.title = `Pablo Garza | Latest Fight Posts`;
 
 
 const baseUrl = 'https://pgarza-dev.com/wp-json/wp/v2/posts/' + id;
-const totalPosts = '?per_page=100';
+// const totalPosts = '?per_page=100';
 
 
 async function getPost() {
@@ -27,7 +27,12 @@ async function getPost() {
       postContainer.innerHTML += `<div>
         <h1 class="fight-post-header">${post.title.rendered}</h1>
         <img class="fight-post-img" src="${post.jetpack_featured_media_url}" alt="Pablo Garza and Fredson Paixoa face off">
-      </div>
+        </div>
+
+        <dialog class="post-dialog">
+        <img class="fight-post-img" src="${post.jetpack_featured_media_url}" alt="Pablo Garza and Fredson Paixoa face off">
+        </dialog>
+
       <div>
         <p class="post-date-styling">${post.date}</p>
       </div>
@@ -37,6 +42,8 @@ async function getPost() {
                 </p>
                 <p>Pablo Garza</p>
               </div>`;
+//add event listener to open dialog box
+
           }            
             catch (error) {
                 console.log({
