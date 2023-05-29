@@ -1,5 +1,3 @@
-// API
-// import { tagsUrl, baseUrl, totalPosts, endPoint} from './utils.js'
 const loader = document.querySelector('.loader');
 const slideShowContainer = document.querySelector('.slideshow-container');
 const slideShowContainerTwo = document.querySelector('.slideshow-container-two');
@@ -13,7 +11,7 @@ const dotContainerFour = document.querySelector('.dot-container-four');
 const mySlides = document.querySelectorAll('.mySlides');
 
 const tagsUrl = 'https://pgarza-dev.com/wp-json/wp/v2/tags';
-const baseUrl = 'https://pgarza-dev.com/wp-json/wp/v2/posts'
+const baseUrl = 'https://pgarza-dev.com/wp-json/wp/v2/posts';
 const totalPosts = '?per_page=100'
 const endPoint = '?category_name=fight-posts'
 // const specificEndPoint = ''
