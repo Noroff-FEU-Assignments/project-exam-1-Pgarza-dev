@@ -356,13 +356,7 @@ nav {
   border-radius: 10px;
   width: 100%;
 }
-/* .img-zoom:hover,
-.img-zoom:active {
-  transition: transform 0.5s ease;
-  transform: scale(1.1);
-  z-index: 3;
-  box-shadow: 0px 4px 8px 4px rgba(0, 0, 0, 0.4);
-} */
+
 
 /* Next & previous buttons */
 .prev,
@@ -738,16 +732,6 @@ nav {
   height: 450px;
   border-radius: 10px;
 }
-
-/* .about-me-deep-dive-section {
-  display: flex;
-  flex-flow: column wrap;
-  max-width: 500px;
-  font-size: 1rem;
-  flex-direction: column;
-  gap: 1rem;
-  line-height: 1.5rem;
-} */
 .subject-title {
   color: var(--about-me-title);
 }
@@ -787,13 +771,11 @@ nav {
   border: none;
   width: 100vw;
 }
-
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
   display: inline-block;
 }
-
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
@@ -804,7 +786,6 @@ nav {
   z-index: 1;
   width: 100%;
 }
-
 /* Links inside the dropdown */
 .dropdown-content a {
   color: black;
@@ -813,16 +794,12 @@ nav {
   display: flex;
   justify-content: center;
 }
-
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {background-color: var(--about-me-title);}
-
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
-
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: var(--about-me-title)}
-
 .blog-post-page-layout {
   display: flex;
   flex-direction: row;
@@ -885,7 +862,6 @@ nav {
   justify-content: flex-end;
   margin: 0 50px 50px 0;
 }
-
 /* dialog styling  */
 .post-dialog {
 margin: auto;
@@ -894,7 +870,23 @@ height: 70%;
 background-color: rgba(0, 0, 0);
 border-radius: 0px;
 }
-
+/* load more posts btn */
+.load-more-posts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+  padding: 20px;
+  background-color: #f1f1f1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.load-more-posts:hover {
+  background-color: var(--about-me-title);
+  color: white;
+  box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0);
+  border-color: white;
+  outline: none;
+}
 
 
 /* --------------- LATEST-FIGHT-POST PAGE ----------*/
