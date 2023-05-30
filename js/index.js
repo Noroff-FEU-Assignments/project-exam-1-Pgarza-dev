@@ -76,10 +76,10 @@ async function fetchData() {
           `<div class="mySlides-two fade my-slides-on-mobile ">
             <div class="class-name">Behind the Scenes</div>
             <div class="img-title">${post.title.rendered}</div>
-            <img class="img-border img-zoom" src="${post.jetpack_featured_media_url}">
+            <img class="img-border img-zoom" src="${post.jetpack_featured_media_url}" alt="${post.excerpt.rendered}">
             }">
             <div class="text">
-              <p class="fight-location-text">${post.excerpt.rendered}</p>
+              <p class="fight-location-text">${post.content.rendered}</p>
               <a class="read-more" href="latestfightpost.html?id=${post.id}">Read More</a>
             </div>
           </div>`
@@ -106,10 +106,10 @@ async function fetchData() {
           `<div class="mySlides-three fade my-slides-on-mobile ">
             <div class="class-name">Fighter Friends</div>
             <div class="img-title">${post.title.rendered}</div>
-            <img class="img-border img-zoom" src="${post.jetpack_featured_media_url}">
+            <img class="img-border img-zoom" src="${post.jetpack_featured_media_url}" alt="${post.excerpt.rendered}">
             }">
             <div class="text">
-              <p class="fight-location-text">${post.excerpt.rendered}</p>
+              <p class="fight-location-text">${post.content.rendered}</p>
               <a class="read-more" href="latestfightpost.html?id=${post.id}">Read More</a>
             </div>
           </div>`
@@ -136,10 +136,10 @@ async function fetchData() {
           `<div class="mySlides-four fade my-slides-on-mobile ">
       <div class="class-name">Training Camps</div>
       <div class="img-title">${post.title.rendered}</div>
-      <img class="img-border img-zoom" src="${post.jetpack_featured_media_url}">
+      <img class="img-border img-zoom" src="${post.jetpack_featured_media_url}" alt="${post.excerpt.rendered}">
       }">
       <div class="text">
-        <p class="fight-location-text">${post.excerpt.rendered}</p>
+        <p class="fight-location-text">${post.content.rendered}</p>
         <a class="read-more" href="latestfightpost.html?id=${post.id}">Read More</a>
       </div>
       </div>`
