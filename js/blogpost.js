@@ -1,6 +1,3 @@
-console.log('blogpost.js is connected');
-
-
 const loader = document.querySelector('.loader');
 const tagsUrl = 'https://pgarza-dev.com/wp-json/wp/v2/tags';
 const baseUrl = 'https://pgarza-dev.com/wp-json/wp/v2/posts';
@@ -18,8 +15,6 @@ async function fetchData() {
     const response = await fetch(baseUrl + totalPosts)
     const data = await response.json()
     const posts = data
-    console.log(posts)
-
 
     // const fightPosts = posts.filter(post => post.tags.includes(ufcTagId));
     // const backstagePosts = posts.filter(post => post.tags.includes(backstageTagId));
@@ -53,13 +48,6 @@ async function fetchData() {
   }
   fetchData();
 
-  
-  
-  
-
-
-
-
 // Hamburguer Menu
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
@@ -75,4 +63,3 @@ document.querySelectorAll('.nav-link').forEach((n) =>
     navMenu.classList.remove('active');
   })
 );
-// console.log(hamburger);
