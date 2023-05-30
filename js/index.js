@@ -28,6 +28,8 @@ async function fetchData() {
     const response = await fetch(baseUrl + totalPosts)
     const data = await response.json()
     const posts = data
+    console.log(posts);
+    
 
     const fightPosts = posts.filter(post => post.tags.includes(ufcTagId));
     const backstagePosts = posts.filter(post => post.tags.includes(backstageTagId));
@@ -45,10 +47,10 @@ async function fetchData() {
           `<div class="mySlides fade my-slides-on-mobile ">
       <div class="class-name">Latest Fight Posts</div>
       <div class="img-title">${post.title.rendered}</div>
-      <img class="img-border img-zoom" src="${post.jetpack_featured_media_url}">
+      <img class="img-border img-zoom" src="${post.jetpack_featured_media_url}" alt="${post.excerpt.rendered}">
       }">
       <div class="text">
-        <p class="fight-location-text">${post.excerpt.rendered}</p>
+        <p class="fight-location-text">${post.content.rendered}</p>
         <a class="read-more" href="latestfightpost.html?id=${post.id}">Read More</a>
       </div>
       </div>`

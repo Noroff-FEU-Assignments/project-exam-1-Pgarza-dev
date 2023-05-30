@@ -26,7 +26,7 @@ async function fetchData() {
     for (let i =0; i < posts.length; i++){    
       blogPostsContainer.innerHTML += `<article class="fight-card-posts">
     <div>
-      <img class="blog-imgs" src=${posts[i].jetpack_featured_media_url} alt="Pablo Garza vs Fredson Paixão face off.">
+      <img class="blog-imgs" src=${posts[i].jetpack_featured_media_url} alt="${posts[i].excerpt.rendered}">
       <h4>${posts[i].title.rendered}</h4>
       <p>${posts[i].date_gmt}</p>
     </div>
