@@ -14,7 +14,6 @@ const tagsUrl = 'https://pgarza-dev.com/wp-json/wp/v2/tags';
 const baseUrl = 'https://pgarza-dev.com/wp-json/wp/v2/posts';
 const totalPosts = '?per_page=100'
 const endPoint = '?category_name=fight-posts'
-// const specificEndPoint = ''
 
 async function fetchData() {
   try {
@@ -29,9 +28,6 @@ async function fetchData() {
     const response = await fetch(baseUrl + totalPosts)
     const data = await response.json()
     const posts = data
-    console.log(data)
-
-    // slideShowContainer.innerHTML = "";
 
     const fightPosts = posts.filter(post => post.tags.includes(ufcTagId));
     const backstagePosts = posts.filter(post => post.tags.includes(backstageTagId));
@@ -192,7 +188,6 @@ function showSlides(carouselOne) {
   let slides = document.getElementsByClassName('mySlides');
   let dots = document.getElementsByClassName('dot');
 
-  console.log(slideIndex);
   if (carouselOne > slides.length) {
     slideIndex = 1;
   }
@@ -205,14 +200,11 @@ function showSlides(carouselOne) {
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(' active', '');
   }
-  console.log(slides);
 
   const slide = slides[slideIndex - 1];
-  console.log(slide);
   if (slide)
     slide.style.display = 'block';
   const dot = dots[slideIndex - 1];
-  console.log(dot);
   if (dot)
     dot.className += ' active';
 }
@@ -256,18 +248,7 @@ function showSlidesTwo(carouselTwo) {
   }
   for (i = 0; i < dotsTwo.length; i++) {
     dotsTwo[i].className = dotsTwo[i].className.replace(' active', '');
-  }
-  console.log(slidesTwo);
-  
-
-  // const slideTwo = slidesTwo[slideIndexTwo - 1];
-  // console.log(slideTwo);
-  // if (slideTwo)
-  //   slideTwo.style.display = 'block';
-  // const dotsTwo = dotsTwo[slideIndexTwo - 1];
-  // console.log(dotTwo);
-  // if (dotsTwo)
-  //   dotsTwo.className += ' active';
+  }  
   slidesTwo[slideIndexTwo - 1].style.display = 'block';
   dotsTwo[slideIndexTwo - 1].className += ' active';
 }
