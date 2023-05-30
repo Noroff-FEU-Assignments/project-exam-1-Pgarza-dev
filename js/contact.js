@@ -26,7 +26,6 @@ document.querySelectorAll('.nav-link').forEach((n) =>
     navMenu.classList.remove('active');
   })
 );
-console.log(hamburger);
 
 function validateForm(event) {
   event.preventDefault();

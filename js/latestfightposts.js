@@ -1,18 +1,13 @@
-console.log('latestfightposts.js loaded');
-
 const loader = document.querySelector('.loader');
 const postContainer = document.querySelector('.fight-post-content-container');
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get('id');
-console.log(id);
 document.title = `Pablo Garza | Latest Fight Posts`;
 
 
 const baseUrl = 'https://pgarza-dev.com/wp-json/wp/v2/posts/' + id;
-// const totalPosts = '?per_page=100';
-
 
 async function getPost() {
   try {
@@ -20,7 +15,6 @@ async function getPost() {
     const response = await fetch(baseUrl);
     const data = await response.json();
     const post = data;
-    console.log(post);
 
     postContainer.innerHTML = '';
     loader.style.display = 'none';
@@ -43,6 +37,17 @@ async function getPost() {
                 <p>Pablo Garza</p>
               </div>`;
 //add event listener to open dialog box
+const modal = document.querySelector('.fight-post-img');
+const dialog = document.querySelector('.post-dialog');
+modal.addEventListener('click', () => {
+    dialog.showModal();
+});
+document.addEventListener('click', function(event) {
+    if (dialog.contains(event.target) ) {
+        dialog.close();
+        console.log('dialog closed');        
+    }
+});
 
           }            
             catch (error) {
