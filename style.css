@@ -359,7 +359,7 @@ nav {
   color: var(--skill-level-title);
   padding: 12px;
   text-align: center;
-  text-decoration: underline;
+  /* text-decoration: underline; */
   display: inline-block;
   border-radius: 10px;
   background: rgb(0 0 0/ 0.8);
@@ -369,7 +369,7 @@ nav {
 .read-more:hover {
   background: rgba(255, 255, 255);
   color: rgb(0, 0, 0);
-  text-decoration: none;
+  text-decoration: underline;
 }
 /* The dots/bullets/indicators */
 .dot-container,
@@ -749,6 +749,12 @@ nav {
   margin-bottom: 15px;
 }
 .blog-post-read-more {
+  color: var(--blog-post-read-more);
+  font-size: 1.2rem;
+  font-weight: bold;
+  /* text-decoration: underline; */
+}
+.blog-post-read-more:hover {
   color: var(--blog-post-read-more);
   font-size: 1.2rem;
   font-weight: bold;

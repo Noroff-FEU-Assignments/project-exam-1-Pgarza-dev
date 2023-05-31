@@ -10,7 +10,7 @@ async function fetchData() {
     const allPostResponse = await fetch(baseUrl + totalPosts);
     const allPostData = await allPostResponse.json();
     const allPosts = allPostData;
-    console.log(allPosts);
+    // console.log(allPosts);
     
 
     const response = await fetch(baseUrl);
@@ -20,11 +20,11 @@ async function fetchData() {
     const tagsResponse = await fetch(tagsUrl);
     const tags = await tagsResponse.json();
     const tagsData = tags;
-    console.log(tagsData);
+    // console.log(tagsData);
 
     // Top View All Posts button filtering posts by tags
     const ufcTagId = tags.find((x) => x.name === "ufc-fights").id;
-    console.log(ufcTagId);
+    // console.log(ufcTagId);
     
     const backstageTagId = tags.find((x) => x.name === "backstage").id;
     const fighterFriendsTagId = tags.find(
@@ -59,7 +59,7 @@ async function fetchData() {
       <p>${posts[i].excerpt.rendered}</p>
     </div>
     <div>
-      <a class="blog-post-read-more" href="singlepost.html?id=${posts[i].id}">Read More</a>
+      <a class="blog-post-read-more" href="singlepost.html?id=${posts[i].id}">Read More..</a>
     </div>
   </article>`;
     }
@@ -89,7 +89,7 @@ async function fetchData() {
         <p>${fightPosts[i].excerpt.rendered}</p>
       </div>
       <div>
-        <a class="blog-post-read-more" href="singlepost.html?id=${fightPosts[i].id}">Read More</a>
+        <a class="blog-post-read-more" href="singlepost.html?id=${fightPosts[i].id}">Read More..</a>
       </div>
     </article>`;
       }
@@ -110,7 +110,7 @@ async function fetchData() {
         <p>${backstagePosts[i].excerpt.rendered}</p>
       </div>
       <div>
-        <a class="blog-post-read-more" href="singlepost.html?id=${backstagePosts[i].id}">Read More</a>
+        <a class="blog-post-read-more" href="singlepost.html?id=${backstagePosts[i].id}">Read More..</a>
       </div>
     </article>`;
       }
@@ -131,7 +131,7 @@ async function fetchData() {
         <p>${fighterFriends[i].excerpt.rendered}</p>
       </div>
       <div>
-        <a class="blog-post-read-more" href="singlepost.html?id=${fighterFriends[i].id}">Read More</a>
+        <a class="blog-post-read-more" href="singlepost.html?id=${fighterFriends[i].id}">Read More..</a>
       </div>
     </article>`;
       }
@@ -152,7 +152,7 @@ async function fetchData() {
         <p>${trainingCampPosts[i].excerpt.rendered}</p>
       </div>
       <div>
-        <a class="blog-post-read-more" href="singlepost.html?id=${trainingCampPosts[i].id}">Read More</a>
+        <a class="blog-post-read-more" href="singlepost.html?id=${trainingCampPosts[i].id}">Read More..</a>
       </div>
     </article>`;
       }

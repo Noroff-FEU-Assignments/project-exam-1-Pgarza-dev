@@ -27,7 +27,8 @@ document.querySelectorAll('.nav-link').forEach((n) =>
   })
 );
 
-function validateForm(event) {
+// Form validation
+submitButton.addEventListener('click', function vlidateForm(event) {
   event.preventDefault();
   if (checkLength(fullName.value, 6) === true) {
     nameError.style.display = 'none';
@@ -59,24 +60,61 @@ function validateForm(event) {
   } else {
     success.style.display = 'none';
   }
-}
+});
+
+// function validateForm(event) {
+//   event.preventDefault();
+//   if (checkLength(fullName.value, 6) === true) {
+//     nameError.style.display = 'none';
+//   } else {
+//     nameError.style.display = 'block';
+//   }
+//   if (checkLength(subject.value, 16) === true) {
+//     subjectError.style.display = 'none';
+//   } else {
+//     subjectError.style.display = 'block';
+//   }
+//   if (checkLength(textarea.value, 26) === true) {
+//     textareaError.style.display = 'none';
+//   } else {
+//     textareaError.style.display = 'block';
+//   }
+//   if (validatEmail(email.value) === true) {
+//     emailError.style.display = 'none';
+//   } else {
+//     emailError.style.display = 'block';
+//   }
+//   if (
+//     checkLength(fullName.value, 6) &&
+//     checkLength(subject.value, 16) &&
+//     checkLength(textarea.value, 26) &&
+//     validatEmail(email.value) === true
+//   ) {
+//     success.style.display = 'block';
+//   } else {
+//     success.style.display = 'none';
+//   }
+// }
 // console.log(validateForm);
 
-if (
-  checkLength(fullName.value, 0) === true &&
-  checkLength(subject.value, 16) === true &&
-  checkLength(textarea.value, 26) === true &&
-  validatEmail(email.value) === true
-) {
-  submitMessage.style.display = 'block';
-  // document.messageForm.submit();
-} else {
-  submitMessage.style.display = 'none';
-}
+// if (
+//   checkLength(fullName.value, 0) === true &&
+//   checkLength(subject.value, 16) === true &&
+//   checkLength(textarea.value, 26) === true &&
+//   validatEmail(email.value) === true
+// ) {
+//   submitMessage.style.display = 'block';
+//   // document.messageForm.submit();
+// } else {
+//   submitMessage.style.display = 'none';
+// }
 
 form.addEventListener('input', validateForm);
-// form.addEventListener('textarea', validateForm);
+form.addEventListener('textarea', validateForm);
 form.addEventListener('submit', validateForm);
+form.addEventListener('email', validateForm);
+form.addEventListener('subject', validateForm);
+
 
 // check the length of the value
 function checkLength(value, len) {
