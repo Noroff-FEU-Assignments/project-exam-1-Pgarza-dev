@@ -50,7 +50,7 @@ async function fetchData() {
       <img class="img-border img-zoom" src="${post.jetpack_featured_media_url}" alt="${post.excerpt.rendered}">
       }">
       <div class="text">
-        <p class="fight-location-text">${post.content.rendered}</p>
+        <p class="fight-location-text">${post.excerpt.rendered}</p>
         <a class="read-more" href="latestfightpost.html?id=${post.id}">Read More</a>
       </div>
       </div>`
@@ -79,7 +79,7 @@ async function fetchData() {
             <img class="img-border img-zoom" src="${post.jetpack_featured_media_url}" alt="${post.excerpt.rendered}">
             }">
             <div class="text">
-              <p class="fight-location-text">${post.content.rendered}</p>
+              <p class="fight-location-text">${post.excerpt.rendered}</p>
               <a class="read-more" href="latestfightpost.html?id=${post.id}">Read More</a>
             </div>
           </div>`
@@ -109,7 +109,7 @@ async function fetchData() {
             <img class="img-border img-zoom" src="${post.jetpack_featured_media_url}" alt="${post.excerpt.rendered}">
             }">
             <div class="text">
-              <p class="fight-location-text">${post.content.rendered}</p>
+              <p class="fight-location-text">${post.excerpt.rendered}</p>
               <a class="read-more" href="latestfightpost.html?id=${post.id}">Read More</a>
             </div>
           </div>`
@@ -139,7 +139,7 @@ async function fetchData() {
       <img class="img-border img-zoom" src="${post.jetpack_featured_media_url}" alt="${post.excerpt.rendered}">
       }">
       <div class="text">
-        <p class="fight-location-text">${post.content.rendered}</p>
+        <p class="fight-location-text">${post.excerpt.rendered}</p>
         <a class="read-more" href="latestfightpost.html?id=${post.id}">Read More</a>
       </div>
       </div>`
