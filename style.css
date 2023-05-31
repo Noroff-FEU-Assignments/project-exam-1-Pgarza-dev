@@ -393,7 +393,7 @@ nav {
 }
 .active,
 .dot:hover {
-  background-color: #1b1b1b;
+  background-color: var(--about-me-title);
 }
 /* Fading animation */
 .fade {
@@ -785,8 +785,10 @@ border-radius: 0px;
   align-items: center;
   margin: 50px;
   padding: 20px;
-  background-color: #f1f1f1;
+  background-color:  rgba(57, 57, 82, 0.53);;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border: none;
+  color: white;
 }
 .load-more-posts:hover {
   background-color: var(--about-me-title);
@@ -822,21 +824,24 @@ border-radius: 0px;
   display: flex;
   text-align: center;
   margin-top: 40px;
+  padding: 20px;
   width: 100px;
   height: 50px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  border: var(--about-me-title) solid 0.5px;
-  color: var(--about-me-title);
-  background: white;
   justify-content: center;
   align-items: center;
+  border: 1px solid rgb(216, 216, 216);
+  background-color:  rgba(57, 57, 82, 0.53);;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border: none;
+  color: white;
 }
 .back-button:hover,
 .more-post-button:hover {
-  background: var(--back-button-hover-color);
+  border: none;
+  background-color: var(--about-me-title);
   color: white;
-}
+  box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0);
+ }
 .fight-post-content-container {
   display: flex;
   flex-direction: column;
