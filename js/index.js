@@ -28,7 +28,6 @@ async function fetchData() {
     const response = await fetch(baseUrl + totalPosts)
     const data = await response.json()
     const posts = data
-    console.log(posts);
     
 
     const fightPosts = posts.filter(post => post.tags.includes(ufcTagId));

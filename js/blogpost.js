@@ -33,7 +33,6 @@ async function fetchData() {
     const trainingCampsTagId = tags.find((x) => x.name === "training-camps").id;
 
     const fightPosts = allPosts.filter((post) => post.tags.includes(ufcTagId));
-    console.log(fightPosts);
     
     const backstagePosts = allPosts.filter((post) =>
       post.tags.includes(backstageTagId)
