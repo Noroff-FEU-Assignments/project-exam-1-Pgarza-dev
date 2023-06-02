@@ -283,6 +283,10 @@ nav {
   position: relative;
   margin: auto;
 }
+/* Hide icon text */
+.hidden {
+  color: white;
+}
 /* Hide the images by default */
 .mySlides,
 .mySlides-two,
@@ -940,9 +944,6 @@ border-radius: 0px;
     border-radius: 0px;
     margin-top: 0;
   }
-  /* .hidden-for-mobile {
-    display: none;
-  } */
   .blog-post-container {
     margin: 0px;
     justify-content: center;
@@ -956,7 +957,7 @@ border-radius: 0px;
   }
   .myself-container,
   .myself-container-deep-dive {
-   padding: 0px 8px;
+    padding: 0px 8px;
   }
 }
 @media (min-width: 426px) {
