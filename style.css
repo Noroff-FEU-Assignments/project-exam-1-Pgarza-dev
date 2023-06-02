@@ -284,8 +284,13 @@ nav {
   margin: auto;
 }
 /* Hide icon text */
-.hidden {
-  color: white;
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* Clip the text off-screen */
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden;
 }
 /* Hide the images by default */
 .mySlides,
