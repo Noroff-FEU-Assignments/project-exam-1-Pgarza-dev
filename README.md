@@ -1,6 +1,6 @@
 # Personal Blog Project
 
-To put into practice the skills learned over your first year of studies. The purpose
+To put into practice the skills learned over my first year of studies. The purpose
 of this project was to create a blog site that contained a carousel of images/posts that would let the user scroll from post to post. A contact form for users to use. A blog page displaying the posts. And a post-specific page. The project also required to have a contact form for user submission
 
 ### Description
